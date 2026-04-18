@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Composite Mobile Robot - RoboLyne</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#dfe2eb",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#2d3137",
+                        "surface-container-low": "#181c22",
+                        "surface-container-lowest": "#0a0e14",
+                        "on-secondary": "#502405",
+                        "on-tertiary-fixed-variant": "#004b6f",
+                        "surface": "#10141a",
+                        "on-secondary-fixed": "#321200",
+                        "on-primary": "#522300",
+                        "primary-fixed-dim": "#ffb68b",
+                        "on-tertiary": "#00344e",
+                        "on-error": "#690005",
+                        "surface-container-highest": "#31353c",
+                        "outline": "#a68b7d",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#8ccdff",
+                        "inverse-surface": "#dfe2eb",
+                        "tertiary": "#8ccdff",
+                        "surface-container": "#1c2026",
+                        "surface-variant": "#31353c",
+                        "surface-container-high": "#262a31",
+                        "secondary": "#ffb68b",
+                        "on-tertiary-container": "#003854",
+                        "outline-variant": "#574237",
+                        "primary-fixed": "#ffdbc8",
+                        "on-primary-container": "#582600",
+                        "on-surface-variant": "#dec1b1",
+                        "tertiary-container": "#00a6ef",
+                        "error-container": "#93000a",
+                        "surface-dim": "#10141a",
+                        "surface-tint": "#ffb68b",
+                        "inverse-primary": "#994700",
+                        "surface-bright": "#353940",
+                        "background": "#10141a",
+                        "on-primary-fixed": "#321200",
+                        "secondary-container": "#6e3c1b",
+                        "primary-container": "#f47b20",
+                        "primary": "#ffb68b",
+                        "on-primary-fixed-variant": "#753400",
+                        "on-tertiary-fixed": "#001e2f",
+                        "on-secondary-container": "#efa87e",
+                        "tertiary-fixed": "#cae6ff",
+                        "secondary-fixed-dim": "#ffb68b",
+                        "secondary-fixed": "#ffdbc8",
+                        "on-secondary-fixed-variant": "#6b3a19",
+                        "on-surface": "#dfe2eb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #10141a; color: #dfe2eb; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#1c2026]/80 backdrop-blur-md shadow-2xl shadow-black/40">
+<div class="flex justify-between items-center max-w-screen-2xl mx-auto px-8 h-20">
+<a href="index.html" class="text-2xl font-bold tracking-tighter text-[#f47b20]">RoboLyne</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="index.html">Home</a>
+<div class="group relative">
+<a href="products.html" class="text-[#f47b20] border-b-2 border-[#f47b20] pb-1 font-medium transition-colors duration-200 flex items-center gap-1"> Products <span class="material-symbols-outlined text-sm" style="transition:transform 0.2s;display:inline-block">expand_more</span></a>
+<div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="min-width:220px">
+<div class="bg-[#1c2026] rounded-xl shadow-[0_24px_48px_rgba(0,0,0,0.5)] border border-[#574237]/30 overflow-hidden">
+<div class="px-4 py-2 border-b border-[#574237]/20">
+<span class="text-[10px] font-bold uppercase tracking-widest text-[#f47b20]">Hardware</span>
+</div>
+<a href="products-agv-forklift.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">forklift</span>AGV Forklift</a>
+<a href="products-agv-roller.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">conveyor_belt</span>AGV Roller</a>
+<a href="products-storage-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">inventory_2</span>Storage AGV</a>
+<a href="products-lifting-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">lift</span>Lifting AGV</a>
+<a href="products-composite-robot.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors border-b border-[#574237]/20">
+<span class="material-symbols-outlined text-[#f47b20] text-base">precision_manufacturing</span>Composite Mobile Robot</a>
+<a href="products.html" class="flex items-center justify-between px-4 py-3 text-xs font-bold text-[#f47b20] hover:bg-[#262a31] transition-colors">
+All Products <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+<div class="group relative">
+<a href="solutions-asrs.html" class="text-slate-400 font-medium hover:text-white transition-colors duration-200 flex items-center gap-1"> Solutions <span class="material-symbols-outlined text-sm">expand_more</span></a>
+<div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="min-width:220px">
+<div class="bg-[#1c2026] rounded-xl shadow-[0_24px_48px_rgba(0,0,0,0.5)] border border-[#574237]/30 overflow-hidden">
+<div class="px-4 py-2 border-b border-[#574237]/20">
+<span class="text-[10px] font-bold uppercase tracking-widest text-[#f47b20]">By Application</span>
+</div>
+<a href="solutions-asrs.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">shelves</span>ASRS Systems</a>
+<a href="solutions-picking.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">package_2</span>Picking Solutions</a>
+<a href="solutions-material.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">move_item</span>Material Handling</a>
+<a href="solutions-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">smart_toy</span>Specialized AGV</a>
+<a href="solutions-software.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors border-b border-[#574237]/20">
+<span class="material-symbols-outlined text-[#f47b20] text-base">dashboard</span>Control Software</a>
+<a href="case-studies.html" class="flex items-center justify-between px-4 py-3 text-xs font-bold text-[#f47b20] hover:bg-[#262a31] transition-colors">
+View Case Studies <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="case-studies.html">Case Studies</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="about.html">About</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="contact.html">Contact</a>
+</div>
+<a href="contact.html" class="primary-gradient text-on-primary-container px-6 py-3 rounded-xl font-bold text-sm hover:brightness-110 active:scale-95 transition-all duration-200 shadow-lg shadow-primary-container/20"> Get a Quote </a>
+</div>
+</nav>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="bg-surface-container-lowest py-16 px-8 lg:px-24">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
+<div class="lg:w-1/2 flex flex-col gap-6">
+<div class="text-on-surface-variant text-sm font-label tracking-widest flex items-center gap-2">
+<a class="hover:text-primary transition-colors" href="index.html">Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="products.html">Products</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface">Composite Mobile Robot</span>
+</div>
+<div class="inline-flex items-center px-3 py-1 bg-primary-container text-on-primary-fixed rounded-DEFAULT text-xs font-bold uppercase tracking-wider w-max">
+                        MULTI-TASK ROBOT
+                    </div>
+<h1 class="text-5xl lg:text-6xl font-headline font-extrabold text-on-surface tracking-tighter leading-tight">
+                        Composite Mobile Robot
+                    </h1>
+<p class="text-lg text-on-surface-variant max-w-xl leading-relaxed">
+                        The most versatile unit in RoboLyne's fleet — a mobile AMR platform combined with a 6-axis collaborative arm for pick-and-place, inspection, assembly assist, and mixed-task warehouse operations.
+                    </p>
+<div class="flex gap-4 mt-4">
+<button class="bg-primary-container text-on-primary-fixed hover:bg-primary transition-colors px-6 py-3 rounded-lg font-bold text-sm shadow-[0_0_15px_rgba(244,123,32,0.2)] hover:shadow-[0_0_20px_rgba(244,123,32,0.4)]">
+                            Request a Demo
+                        </button>
+<button class="bg-surface-container-highest text-on-surface hover:text-primary border border-outline-variant/30 hover:border-primary/50 transition-colors px-6 py-3 rounded-lg font-bold text-sm">
+                            Download Spec Sheet
+                        </button>
+</div>
+</div>
+<div class="lg:w-1/2 w-full aspect-square bg-surface-container-high rounded-xl relative overflow-hidden flex items-center justify-center border border-outline-variant/10 shadow-[0_32px_64px_-12px_rgba(10,14,20,0.6)]">
+<img alt="Composite Mobile Robot" class="object-cover w-full h-full opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500" data-alt="high-tech industrial collaborative robot arm mounted on an autonomous mobile base in a dark modern warehouse setting with dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcAiSqm3_-5DslhECVrFRjN87p1F_aOuCf-a1zcYxfFpi8l3lcmOx1wFYiGInoBeVFWG1i7nNRDz94hEShQwxCVzdb5WI4Xr5wfF_PXT0Jw4kdI0CmZPwEX-2oMesIA78jUsg0ZaP8AiFi6eUWjX9ZyIsz2qv0f6m5tYB24ixAURJg1RkcphqGUL46Jge22qjONYWQRqGccwRQHyB-sjwxHn-c0_nXAtjVAB1GksE2ZfDUkfF_khEk1CLPoa03YEZbu5JCPsKrEBM"/>
+<!-- HUD overlay simulation -->
+<div class="absolute inset-0 bg-gradient-to-tr from-surface-container-lowest/80 via-transparent to-primary/10 pointer-events-none"></div>
+</div>
+</div>
+</section>
+<!-- Specs Bar -->
+<section class="bg-surface-container-high border-y border-outline-variant/20 py-6">
+<div class="max-w-7xl mx-auto px-8 lg:px-24">
+<div class="grid grid-cols-2 md:grid-cols-5 gap-6 divide-x divide-outline-variant/20">
+<div class="flex flex-col items-center justify-center text-center px-4">
+<span class="text-on-surface-variant text-xs font-label uppercase tracking-widest mb-1">Arm Payload</span>
+<span class="text-tertiary font-headline font-bold text-xl">5 kg</span>
+</div>
+<div class="flex flex-col items-center justify-center text-center px-4">
+<span class="text-on-surface-variant text-xs font-label uppercase tracking-widest mb-1">Arm Reach</span>
+<span class="text-tertiary font-headline font-bold text-xl">900 mm</span>
+</div>
+<div class="flex flex-col items-center justify-center text-center px-4">
+<span class="text-on-surface-variant text-xs font-label uppercase tracking-widest mb-1">Navigation</span>
+<span class="text-tertiary font-headline font-bold text-xl">SLAM + QR</span>
+</div>
+<div class="flex flex-col items-center justify-center text-center px-4">
+<span class="text-on-surface-variant text-xs font-label uppercase tracking-widest mb-1">Mobile Speed</span>
+<span class="text-tertiary font-headline font-bold text-xl">1.5 m/s</span>
+</div>
+<div class="flex flex-col items-center justify-center text-center px-4">
+<span class="text-on-surface-variant text-xs font-label uppercase tracking-widest mb-1">Repeat Accuracy</span>
+<span class="text-tertiary font-headline font-bold text-xl">±0.05 mm</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0a0e14] w-full mt-auto border-t border-[#262a31]/15 grid grid-cols-2 md:grid-cols-4 gap-8 px-12 py-16 w-full">
+<div class="col-span-2 md:col-span-4 flex flex-col items-center mb-8">
+<div class="text-lg font-black text-[#dfe2eb] font-['Inter'] uppercase tracking-widest text-[10px] mb-2">RoboLyne</div>
+<div class="text-[#dfe2eb] font-['Inter'] uppercase tracking-widest text-[10px]">© 2024 RoboLyne Industrial Automation. All rights reserved.</div>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-[#dec1b1] hover:text-[#f47b20] transition-colors font-['Inter'] uppercase tracking-widest text-[10px]" href="#">Technical Specifications</a>
+<a class="text-[#dec1b1] hover:text-[#f47b20] transition-colors font-['Inter'] uppercase tracking-widest text-[10px]" href="#">Safety Protocols</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-[#dec1b1] hover:text-[#f47b20] transition-colors font-['Inter'] uppercase tracking-widest text-[10px]" href="#">Compliance</a>
+<a class="text-[#dec1b1] hover:text-[#f47b20] transition-colors font-['Inter'] uppercase tracking-widest text-[10px]" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-[#dec1b1] hover:text-[#f47b20] transition-colors font-['Inter'] uppercase tracking-widest text-[10px]" href="#">Support</a>
+<a class="text-[#dec1b1] hover:text-[#f47b20] transition-colors font-['Inter'] uppercase tracking-widest text-[10px]" href="#">Documentation</a>
+</div>
+</footer>
+</body></html>

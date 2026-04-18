@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGV Forklift - RoboLyne</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#ffb68b",
+                        "secondary-fixed-dim": "#c0c6d8",
+                        "primary": "#ffb68b",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#004b6f",
+                        "on-background": "#dfe2eb",
+                        "surface-container": "#1c2026",
+                        "surface-bright": "#353940",
+                        "inverse-surface": "#dfe2eb",
+                        "on-tertiary-container": "#003854",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#321200",
+                        "surface-container-high": "#262a31",
+                        "on-secondary-fixed-variant": "#404755",
+                        "outline-variant": "#574237",
+                        "on-surface-variant": "#dec1b1",
+                        "on-primary": "#522300",
+                        "primary-container": "#f47b20",
+                        "tertiary-container": "#00a6ef",
+                        "surface": "#10141a",
+                        "secondary": "#c0c6d8",
+                        "tertiary-fixed": "#cae6ff",
+                        "tertiary": "#8ccdff",
+                        "on-secondary": "#2a313e",
+                        "surface-container-low": "#181c22",
+                        "on-secondary-fixed": "#151c28",
+                        "surface-variant": "#31353c",
+                        "on-primary-fixed-variant": "#753400",
+                        "background": "#10141a",
+                        "on-secondary-container": "#b2b8ca",
+                        "inverse-on-surface": "#2d3137",
+                        "primary-fixed-dim": "#ffb68b",
+                        "surface-dim": "#10141a",
+                        "on-tertiary": "#00344e",
+                        "secondary-container": "#424958",
+                        "surface-container-lowest": "#0a0e14",
+                        "secondary-fixed": "#dce2f4",
+                        "inverse-primary": "#994700",
+                        "error-container": "#93000a",
+                        "outline": "#a68b7d",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-highest": "#31353c",
+                        "on-surface": "#dfe2eb",
+                        "tertiary-fixed-dim": "#8ccdff",
+                        "primary-fixed": "#ffdbc8",
+                        "on-primary-container": "#582600",
+                        "on-tertiary-fixed": "#001e2f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .bg-glass {
+                @apply bg-[#1c2026]/70 backdrop-blur-[20px];
+            }
+            .text-gradient {
+                @apply text-transparent bg-clip-text bg-gradient-to-br from-[#ffb68b] to-[#f47b20];
+            }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container/30 selection:text-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#1c2026]/80 backdrop-blur-md shadow-2xl shadow-black/40">
+<div class="flex justify-between items-center max-w-screen-2xl mx-auto px-8 h-20">
+<a href="index.html" class="text-2xl font-bold tracking-tighter text-[#f47b20]">RoboLyne</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="index.html">Home</a>
+<div class="group relative">
+<a href="products.html" class="text-[#f47b20] border-b-2 border-[#f47b20] pb-1 font-medium transition-colors duration-200 flex items-center gap-1"> Products <span class="material-symbols-outlined text-sm" style="transition:transform 0.2s;display:inline-block">expand_more</span></a>
+<div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="min-width:220px">
+<div class="bg-[#1c2026] rounded-xl shadow-[0_24px_48px_rgba(0,0,0,0.5)] border border-[#574237]/30 overflow-hidden">
+<div class="px-4 py-2 border-b border-[#574237]/20">
+<span class="text-[10px] font-bold uppercase tracking-widest text-[#f47b20]">Hardware</span>
+</div>
+<a href="products-agv-forklift.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">forklift</span>AGV Forklift</a>
+<a href="products-agv-roller.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">conveyor_belt</span>AGV Roller</a>
+<a href="products-storage-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">inventory_2</span>Storage AGV</a>
+<a href="products-lifting-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">lift</span>Lifting AGV</a>
+<a href="products-composite-robot.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors border-b border-[#574237]/20">
+<span class="material-symbols-outlined text-[#f47b20] text-base">precision_manufacturing</span>Composite Mobile Robot</a>
+<a href="products.html" class="flex items-center justify-between px-4 py-3 text-xs font-bold text-[#f47b20] hover:bg-[#262a31] transition-colors">
+All Products <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+<div class="group relative">
+<a href="solutions-asrs.html" class="text-slate-400 font-medium hover:text-white transition-colors duration-200 flex items-center gap-1"> Solutions <span class="material-symbols-outlined text-sm">expand_more</span></a>
+<div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="min-width:220px">
+<div class="bg-[#1c2026] rounded-xl shadow-[0_24px_48px_rgba(0,0,0,0.5)] border border-[#574237]/30 overflow-hidden">
+<div class="px-4 py-2 border-b border-[#574237]/20">
+<span class="text-[10px] font-bold uppercase tracking-widest text-[#f47b20]">By Application</span>
+</div>
+<a href="solutions-asrs.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">shelves</span>ASRS Systems</a>
+<a href="solutions-picking.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">package_2</span>Picking Solutions</a>
+<a href="solutions-material.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">move_item</span>Material Handling</a>
+<a href="solutions-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">smart_toy</span>Specialized AGV</a>
+<a href="solutions-software.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors border-b border-[#574237]/20">
+<span class="material-symbols-outlined text-[#f47b20] text-base">dashboard</span>Control Software</a>
+<a href="case-studies.html" class="flex items-center justify-between px-4 py-3 text-xs font-bold text-[#f47b20] hover:bg-[#262a31] transition-colors">
+View Case Studies <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="case-studies.html">Case Studies</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="about.html">About</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="contact.html">Contact</a>
+</div>
+<a href="contact.html" class="primary-gradient text-on-primary-container px-6 py-3 rounded-xl font-bold text-sm hover:brightness-110 active:scale-95 transition-all duration-200 shadow-lg shadow-primary-container/20"> Get a Quote </a>
+</div>
+</nav>
+<main class="pt-24">
+<!-- HERO -->
+<section class="bg-surface relative overflow-hidden py-16 md:py-32">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
+<div class="flex flex-col justify-center space-y-8">
+<div class="flex items-center gap-2 text-sm text-on-surface-variant font-label tracking-wide uppercase">
+<a class="hover:text-primary transition-colors" href="index.html">Home</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="products.html">Products</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-primary">AGV Forklift</span>
+</div>
+<div class="space-y-4">
+<span class="inline-block px-3 py-1 bg-primary-container/10 text-primary border border-primary/20 rounded font-label text-xs tracking-widest uppercase shadow-[0_0_24px_rgba(244,123,32,0.15)]">HEAVY LOAD AGV</span>
+<h1 class="font-headline text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight">AGV Forklift</h1>
+<p class="text-lg text-on-surface-variant leading-relaxed max-w-xl">Purpose-built for high-density pallet handling. The RoboLyne AGV Forklift delivers precise, autonomous pallet transport across rack aisles, loading docks, and production floors — rated to 2,000kg with laser-guided navigation.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<a class="inline-flex justify-center items-center px-6 py-3 bg-primary-container text-on-primary-container font-medium rounded-md hover:bg-primary transition-colors" href="contact.html">
+                            Request a Demo
+                        </a>
+<a class="inline-flex justify-center items-center px-6 py-3 bg-transparent border border-outline-variant text-primary hover:bg-primary/10 transition-colors rounded-md font-medium" href="#">
+                            Download Spec Sheet
+                        </a>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-[4/3] rounded-lg overflow-hidden bg-surface-container shadow-[0_0_40px_rgba(0,0,0,0.5)] border border-white/5 relative group">
+<img alt="AGV Forklift product image" class="w-full h-full object-cover mix-blend-luminosity opacity-80 group-hover:opacity-100 group-hover:mix-blend-normal transition-all duration-700" data-alt="Industrial autonomous forklift moving a heavy pallet in a dark, high-tech warehouse environment with orange safety lights glowing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtwHGsVdQH-7gv3WWxBbNVO0f_JQr_SV-YSA1hEGWrMv8PJAP_d1yw7zgFTJ0q-gayyaTGH16LT8qd5Nfi8rflCFjyjJ1ynlVQiSOZMDiIuPrwNlxrsEUQvvezaTsfjy_z7xK6cNiPSGF1vhOJA50JZ6j94eH8XzkKMvjKqAF4w8E_6vKzBHhx3m7HZFOl3RRoNU00zKSRGcyr9VQsIXafZzev7OWXnqMLS1LHwVMw5yxl78iiw4v3TkFDTUDg744rO_U5hhcvD08"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-6">
+<div class="bg-surface-container-low p-4 rounded-md">
+<div class="text-xs text-on-surface-variant font-label uppercase tracking-wider mb-1">Max Load</div>
+<div class="font-headline font-semibold text-xl text-primary">2,000kg</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-md">
+<div class="text-xs text-on-surface-variant font-label uppercase tracking-wider mb-1">Navigation</div>
+<div class="font-headline font-semibold text-xl text-primary">Laser+QR</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-md">
+<div class="text-xs text-on-surface-variant font-label uppercase tracking-wider mb-1">Speed</div>
+<div class="font-headline font-semibold text-xl text-primary">1.8 m/s</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-md">
+<div class="text-xs text-on-surface-variant font-label uppercase tracking-wider mb-1">Operating</div>
+<div class="font-headline font-semibold text-xl text-primary">24/7</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SPECS TABLE -->
+<section class="bg-[#181c22] py-24 border-t border-white/5">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-12">
+<span class="text-primary font-label text-sm uppercase tracking-widest block mb-2">KEY SPECIFICATIONS</span>
+<h2 class="font-headline text-3xl font-bold tracking-tight text-white">Technical Specifications</h2>
+</div>
+<div class="bg-surface-container rounded-lg border border-outline-variant/15 overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 p-8">
+<div class="flex justify-between border-b border-outline-variant/15 pb-4">
+<span class="text-on-surface-variant">Load Capacity</span>
+<span class="font-medium text-white">2,000 kg</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/15 pb-4">
+<span class="text-on-surface-variant">Fork Height</span>
+<span class="font-medium text-white">Up to 6,000 mm</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/15 pb-4">
+<span class="text-on-surface-variant">Travel Speed</span>
+<span class="font-medium text-white">1.8 m/s (laden)</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/15 pb-4">
+<span class="text-on-surface-variant">Navigation</span>
+<span class="font-medium text-white">Laser + QR Code Hybrid</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FINAL CTA -->
+<section class="bg-surface-container-lowest py-32 relative overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-full max-w-3xl h-full bg-primary/5 blur-[120px] rounded-full"></div>
+</div>
+<div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+<h2 class="font-headline text-4xl font-bold tracking-tight text-white mb-8">Interested in the AGV Forklift?</h2>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a class="inline-flex justify-center items-center px-8 py-4 bg-primary-container text-on-primary-container font-medium rounded-md hover:bg-primary transition-colors text-lg shadow-[0_0_32px_rgba(244,123,32,0.2)]" href="#">
+                        Request a Consultation
+                    </a>
+<a class="inline-flex justify-center items-center px-8 py-4 bg-transparent border border-outline-variant text-primary hover:bg-primary/10 transition-colors rounded-md font-medium text-lg" href="#">
+                        Download Full Spec Sheet
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0a0e14] w-full border-t border-white/5 font-['Inter'] text-sm tracking-wide">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 w-full max-w-7xl mx-auto">
+<div>
+<span class="text-lg font-black text-white block mb-4">RoboLyne</span>
+<p class="text-white/40 mb-6">Precision Engineered Autonomy.</p>
+<p class="text-white/40">© 2024 RoboLyne Robotics.</p>
+</div>
+<div>
+<ul class="space-y-4">
+<li><a class="text-white/40 hover:text-white hover:translate-x-1 transition-transform ease-in-out duration-200 inline-block" href="#">Privacy Policy</a></li>
+<li><a class="text-white/40 hover:text-white hover:translate-x-1 transition-transform ease-in-out duration-200 inline-block" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<ul class="space-y-4">
+<li><a class="text-white/40 hover:text-white hover:translate-x-1 transition-transform ease-in-out duration-200 inline-block" href="#">ISO Certifications</a></li>
+<li><a class="text-white/40 hover:text-white hover:translate-x-1 transition-transform ease-in-out duration-200 inline-block" href="#">Contact Engineering</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body></html>

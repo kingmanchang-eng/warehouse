@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact | ROBOLYNE AUTOMATION</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#8c919a",
+                        "on-secondary-fixed": "#151c28",
+                        "secondary-fixed": "#c0c6d8",
+                        "on-secondary": "#151c28",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-highest": "#31353c",
+                        "on-secondary-fixed-variant": "#353c49",
+                        "surface-dim": "#10141a",
+                        "primary-fixed": "#994700",
+                        "inverse-primary": "#994700",
+                        "on-tertiary-container": "#000000",
+                        "background": "#10141a",
+                        "outline": "#919191",
+                        "on-primary": "#321200",
+                        "on-primary-fixed": "#ffffff",
+                        "surface-variant": "#31353c",
+                        "surface": "#10141a",
+                        "secondary-container": "#404755",
+                        "on-primary-fixed-variant": "#ffdbc8",
+                        "primary-container": "#ffc9ab",
+                        "on-surface-variant": "#c6c6c6",
+                        "secondary-fixed-dim": "#a4abbc",
+                        "surface-bright": "#353940",
+                        "inverse-surface": "#dfe2eb",
+                        "outline-variant": "#474747",
+                        "on-surface": "#dfe2eb",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed": "#ffffff",
+                        "secondary": "#c0c6d8",
+                        "on-primary-container": "#000000",
+                        "surface-container-lowest": "#0a0e14",
+                        "tertiary-fixed": "#5a5f67",
+                        "on-tertiary-fixed-variant": "#dee2ec",
+                        "tertiary-fixed-dim": "#42474f",
+                        "on-secondary-container": "#dce2f4",
+                        "tertiary": "#dee2ec",
+                        "surface-container-low": "#181c22",
+                        "surface-tint": "#ffb68b",
+                        "surface-container": "#1c2026",
+                        "on-error": "#690005",
+                        "on-background": "#dfe2eb",
+                        "on-tertiary": "#171c23",
+                        "primary": "#ffffff",
+                        "surface-container-high": "#262a31",
+                        "inverse-on-surface": "#2d3137",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#753400"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "12px",
+                        "lg": "12px",
+                        "xl": "16px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #10141a;
+            color: #dfe2eb;
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(244, 123, 32, 0.08), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(64, 71, 85, 0.1), transparent 40%);
+        }
+    </style>
+</head>
+<body class="bg-background selection:bg-[#F47B20]/30 overflow-x-hidden">
+<!-- TopNavBar Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#1c2026]/80 backdrop-blur-md shadow-2xl shadow-black/40">
+<div class="flex justify-between items-center max-w-screen-2xl mx-auto px-8 h-20">
+<a href="index.html" class="text-2xl font-bold tracking-tighter text-[#f47b20]">RoboLyne</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="index.html">Home</a>
+<div class="group relative">
+<a href="products.html" class="text-slate-400 font-medium hover:text-white transition-colors duration-200 flex items-center gap-1"> Products <span class="material-symbols-outlined text-sm" style="transition:transform 0.2s;display:inline-block">expand_more</span></a>
+<div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="min-width:220px">
+<div class="bg-[#1c2026] rounded-xl shadow-[0_24px_48px_rgba(0,0,0,0.5)] border border-[#574237]/30 overflow-hidden">
+<div class="px-4 py-2 border-b border-[#574237]/20">
+<span class="text-[10px] font-bold uppercase tracking-widest text-[#f47b20]">Hardware</span>
+</div>
+<a href="products-agv-forklift.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">forklift</span>AGV Forklift</a>
+<a href="products-agv-roller.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">conveyor_belt</span>AGV Roller</a>
+<a href="products-storage-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">inventory_2</span>Storage AGV</a>
+<a href="products-lifting-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">lift</span>Lifting AGV</a>
+<a href="products-composite-robot.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors border-b border-[#574237]/20">
+<span class="material-symbols-outlined text-[#f47b20] text-base">precision_manufacturing</span>Composite Mobile Robot</a>
+<a href="products.html" class="flex items-center justify-between px-4 py-3 text-xs font-bold text-[#f47b20] hover:bg-[#262a31] transition-colors">
+All Products <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+<div class="group relative">
+<a href="solutions-asrs.html" class="text-slate-400 font-medium hover:text-white transition-colors duration-200 flex items-center gap-1"> Solutions <span class="material-symbols-outlined text-sm">expand_more</span></a>
+<div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="min-width:220px">
+<div class="bg-[#1c2026] rounded-xl shadow-[0_24px_48px_rgba(0,0,0,0.5)] border border-[#574237]/30 overflow-hidden">
+<div class="px-4 py-2 border-b border-[#574237]/20">
+<span class="text-[10px] font-bold uppercase tracking-widest text-[#f47b20]">By Application</span>
+</div>
+<a href="solutions-asrs.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">shelves</span>ASRS Systems</a>
+<a href="solutions-picking.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">package_2</span>Picking Solutions</a>
+<a href="solutions-material.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">move_item</span>Material Handling</a>
+<a href="solutions-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">smart_toy</span>Specialized AGV</a>
+<a href="solutions-software.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors border-b border-[#574237]/20">
+<span class="material-symbols-outlined text-[#f47b20] text-base">dashboard</span>Control Software</a>
+<a href="case-studies.html" class="flex items-center justify-between px-4 py-3 text-xs font-bold text-[#f47b20] hover:bg-[#262a31] transition-colors">
+View Case Studies <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="case-studies.html">Case Studies</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="about.html">About</a>
+<a class="text-[#f47b20] border-b-2 border-[#f47b20] pb-1 font-medium transition-colors duration-200" href="contact.html">Contact</a>
+</div>
+<a href="contact.html" class="primary-gradient text-on-primary-container px-6 py-3 rounded-xl font-bold text-sm hover:brightness-110 active:scale-95 transition-all duration-200 shadow-lg shadow-primary-container/20"> Get a Quote </a>
+</div>
+</nav>
+<main class="hero-gradient pt-32 pb-24 px-8">
+<!-- Hero Section -->
+<section class="max-w-[1440px] mx-auto text-center mb-24">
+<span class="text-[#F47B20] font-bold tracking-[0.15em] text-[10px] uppercase font-label bg-[#F47B20]/10 px-4 py-1.5 rounded-full mb-6 inline-block">CONTACT US</span>
+<h1 class="text-6xl md:text-7xl font-extrabold font-headline text-white -tracking-[0.04em] mb-6 leading-tight max-w-4xl mx-auto">
+                Let's Talk About Your <span class="text-[#F47B20]">Warehouse</span>
+</h1>
+<p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                Connect with our specialized engineering team to evaluate feasibility, design custom automation workflows, and implement high-precision ASRS systems.
+            </p>
+</section>
+<!-- Contact Methods (Row of 4 Cards) -->
+<section class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 mb-20">
+<div class="bg-surface-container-lowest p-8 rounded-xl group hover:bg-surface-container-low transition-all duration-300">
+<div class="bg-[#F47B20]/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 text-[#F47B20]">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</div>
+<h4 class="text-white font-bold font-headline mb-2 text-lg">Phone</h4>
+<p class="text-[#F47B20] font-semibold mb-1 text-sm">+86 755 8822 4433</p>
+<p class="text-slate-500 text-xs">Mon-Sat 8am-6pm CST</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl group hover:bg-surface-container-low transition-all duration-300">
+<div class="bg-green-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 text-green-500">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+</div>
+<h4 class="text-white font-bold font-headline mb-2 text-lg">WhatsApp</h4>
+<p class="text-green-500 font-semibold mb-1 text-sm">+86 138 0013 8000</p>
+<p class="text-slate-500 text-xs">2hr average response</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl group hover:bg-surface-container-low transition-all duration-300">
+<div class="bg-blue-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 text-blue-500">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</div>
+<h4 class="text-white font-bold font-headline mb-2 text-lg">Email</h4>
+<p class="text-blue-400 font-semibold mb-1 text-sm">sales@robolyne.com</p>
+<p class="text-slate-500 text-xs">1 business day response</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl group hover:bg-surface-container-low transition-all duration-300">
+<div class="bg-[#F47B20]/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 text-[#F47B20]">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</div>
+<h4 class="text-white font-bold font-headline mb-2 text-lg">Address</h4>
+<p class="text-slate-300 font-semibold mb-1 text-sm">Shenzhen, China</p>
+<p class="text-slate-500 text-xs">Factory tours by appointment</p>
+</div>
+</section>
+<!-- Main Content (2-Column Split) -->
+<section class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-10 gap-12">
+<!-- Left 60%: Enquiry Form -->
+<div class="lg:col-span-6 bg-surface-container p-10 rounded-xl">
+<div class="mb-10">
+<h2 class="text-3xl font-bold font-headline text-white mb-2">Send Us a Message</h2>
+<p class="text-slate-400 text-sm">Detailed enquiries allow our engineers to prepare a preliminary assessment before our first call.</p>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-semibold text-slate-300 uppercase tracking-wider font-label">First Name</label>
+<input class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all" placeholder="e.g. James" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-semibold text-slate-300 uppercase tracking-wider font-label">Last Name</label>
+<input class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all" placeholder="e.g. Miller" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-semibold text-slate-300 uppercase tracking-wider font-label">Company</label>
+<input class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all" placeholder="Global Logistics Corp" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-semibold text-slate-300 uppercase tracking-wider font-label">Email Address</label>
+<input class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all" placeholder="james@company.com" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-semibold text-slate-300 uppercase tracking-wider font-label">Phone Number</label>
+<input class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all" placeholder="+1 000 000 0000" type="tel"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-semibold text-slate-300 uppercase tracking-wider font-label">Country</label>
+<select class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all">
+<option>Select Country</option>
+<option>United States</option>
+<option>China</option>
+<option>Germany</option>
+<option>Singapore</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-semibold text-slate-300 uppercase tracking-wider font-label">Solution Interest</label>
+<select class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all">
+<option>ASRS Systems</option>
+<option>Material Handling</option>
+<option>Order Picking</option>
+<option>WMS Software</option>
+<option>Not Sure</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-semibold text-slate-300 uppercase tracking-wider font-label">Warehouse Size (m²)</label>
+<select class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all">
+<option>&lt; 5,000</option>
+<option>5,000 - 20,000</option>
+<option>20,000 - 50,000</option>
+<option>50,000+</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-semibold text-slate-300 uppercase tracking-wider font-label">Message / Project Details</label>
+<textarea class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all" placeholder="Briefly describe your current pain points and operational goals..." rows="4"></textarea>
+</div>
+<label class="flex items-center gap-3 cursor-pointer group py-2">
+<div class="relative w-5 h-5 flex items-center justify-center">
+<input class="peer appearance-none w-5 h-5 border-2 border-slate-600 rounded checked:bg-[#F47B20] checked:border-[#F47B20] transition-all" type="checkbox"/>
+<span class="material-symbols-outlined text-on-primary text-[16px] absolute hidden peer-checked:block pointer-events-none" data-icon="check">check</span>
+</div>
+<span class="text-slate-400 text-sm group-hover:text-white transition-colors">I would like a complimentary ROI analysis for my facility.</span>
+</label>
+<button class="w-full bg-[#F47B20] text-on-primary py-4 rounded-lg font-extrabold font-headline uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-all mt-4">
+                        Submit Enquiry
+                    </button>
+</form>
+</div>
+<!-- Right 40%: ROI & Specialist -->
+<div class="lg:col-span-4 space-y-8">
+<!-- ROI Card -->
+<div class="bg-surface-container-high rounded-xl p-8 border-t-4 border-[#F47B20]">
+<h3 class="text-2xl font-bold font-headline text-white mb-6">FREE ROI ANALYSIS</h3>
+<p class="text-slate-400 mb-8 leading-relaxed">Discover the economic impact of upgrading your logistics hub with RoboLyne automation.</p>
+<ul class="space-y-6 mb-10">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-[#F47B20] mt-1" data-icon="analytics">analytics</span>
+<div>
+<span class="block text-white font-semibold mb-1">Personalized Cost Model</span>
+<span class="text-slate-400 text-sm">Hardware, software, and integration cost breakdown.</span>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-[#F47B20] mt-1" data-icon="speed">speed</span>
+<div>
+<span class="block text-white font-semibold mb-1">Payback Estimate</span>
+<span class="text-slate-400 text-sm">Calculated time to breakeven based on labor savings.</span>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-[#F47B20] mt-1" data-icon="verified">verified</span>
+<div>
+<span class="block text-white font-semibold mb-1">No-Obligation Report</span>
+<span class="text-slate-400 text-sm">A complete executive summary for your board.</span>
+</div>
+</li>
+</ul>
+<button class="w-full bg-[#F47B20] text-on-primary py-4 rounded-lg font-bold hover:brightness-110 transition-all">
+                        Request ROI Analysis
+                    </button>
+<div class="h-[1px] bg-outline-variant/20 my-10"></div>
+<h4 class="text-lg font-bold font-headline text-white mb-4">Talk to a Specialist Directly</h4>
+<p class="text-slate-400 text-sm mb-6">Need immediate technical consultation? Schedule a 15-minute intro call with our Lead Automation Engineer.</p>
+<button class="w-full border-2 border-[#F47B20] text-[#F47B20] py-4 rounded-lg font-bold hover:bg-[#F47B20] hover:text-on-primary transition-all">
+                        Book a Discovery Call
+                    </button>
+</div>
+<!-- Industrial Badge / Image Card -->
+<div class="relative h-64 rounded-xl overflow-hidden group">
+<img alt="Warehouse Automation" class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-60 transition-all duration-700" data-alt="Modern high-tech warehouse with autonomous mobile robots and high-reach racking systems in a dark dramatic setting with orange light accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARNhZXkoBUFGBUcEpmCxFMeoBEI1CS8YEnO_QQPFnlwlkVJRQywCKgfju3hITat6B2ZSeNxB2Dg_N0aBP68zqo0HBks74LtK6YyMq2DrGF7J4ljWQ1elksD1RzKfJQo6USeMgsejsfXHQYm69xl_Gjl44UsvRkGlY9WgBu4OzIw1pNR6sWXXF9-1zHJe_Dxs9WuAB5Uv9JxkQBVOK0F_SfHoQnyjpB55wv8aeW_rU-PP98ErNNTO6bJqBYLbUixs-JnWsTj9RZA0A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></div>
+<span class="text-[10px] uppercase font-label tracking-widest text-slate-300">Engineers Online</span>
+</div>
+<p class="text-white font-bold leading-tight">Factory throughput increased by 40% on average with our Gen-3 ASRS.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest pt-20 pb-12 px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-[1440px] mx-auto border-b border-outline-variant/10 pb-16">
+<div class="space-y-6">
+<div class="text-lg font-black text-white tracking-tighter">ROBOLYNE</div>
+<p class="text-slate-500 text-sm leading-relaxed max-w-xs">Precision engineered automation solutions for the next generation of global supply chains.</p>
+<div class="flex gap-4">
+<div class="w-12 h-12 bg-white/5 rounded flex items-center justify-center grayscale hover:grayscale-0 transition-all">
+<img class="w-8 h-8 object-contain" data-alt="ISO 9001 quality management system certification emblem in vector style on dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHt7SiQsA8uYwZH9dAQAl3ZwM7ho5A1yTW-RIEIdM4AzTe1D3Gh38T7CyLU1BQV1JO7T8XvjBMdvzM2m3AE_xbaYcS0Uw4EEx4Tsle6jSXZl7zAsLDSwXAbdGEXgNrEZqYfApr2pqe7A83n0j2kcRvnE4__ZD65zhHNB21F8mULCfR9uQHz_aM4N0JMdHfnPpu-SzjNxvS0T7CO5j4c7_BqEUzLPZgIg_MNsPemHttSiNeLsU5M2_LxkHqqCHZjMGcShm_WvvwQaQ"/>
+</div>
+<div class="w-12 h-12 bg-white/5 rounded flex items-center justify-center grayscale hover:grayscale-0 transition-all">
+<img class="w-8 h-8 object-contain" data-alt="ISO 14001 environmental management system certification emblem in vector style on dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByZ_6xzk0uNa6rSy9noiHcUUW9HvCCd7kdP6sIud97OlaYntNKiSa2QqK2DtcX3fUWdYNo4UEwMetQxBj8RGBoIYMnrCL1fRcjMS5chukq2cMx-6iymOAO3-eWwLGyJZgFtOYdpwLGWEjFXIObdcLEY8n4lJAfucOacH894X_3aiALB5GUFPPrf0R-VM367PbuwdrbusnOgJJZsEGJ96IhipESTaH-zYT2vr4RQNB5WdJ6nKhVuLAWcFNORPc9KX1dq7cP6I8UgNk"/>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<h5 class="text-white font-bold text-xs uppercase tracking-[0.2em] font-label">Solutions</h5>
+<ul class="space-y-3">
+<li><a class="text-slate-500 uppercase tracking-widest text-[10px] hover:text-[#F47B20] transition-colors" href="#">Vertical ASRS</a></li>
+<li><a class="text-slate-500 uppercase tracking-widest text-[10px] hover:text-[#F47B20] transition-colors" href="#">Mobile Robots (AMR)</a></li>
+<li><a class="text-slate-500 uppercase tracking-widest text-[10px] hover:text-[#F47B20] transition-colors" href="#">Sorting Systems</a></li>
+<li><a class="text-slate-500 uppercase tracking-widest text-[10px] hover:text-[#F47B20] transition-colors" href="#">Software Suite</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="text-white font-bold text-xs uppercase tracking-[0.2em] font-label">Compliance</h5>
+<ul class="space-y-3">
+<li><a class="text-slate-500 uppercase tracking-widest text-[10px] hover:text-[#F47B20] transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 uppercase tracking-widest text-[10px] hover:text-[#F47B20] transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-slate-500 uppercase tracking-widest text-[10px] hover:text-[#F47B20] transition-colors" href="#">ISO 9001 Certified</a></li>
+<li><a class="text-slate-500 uppercase tracking-widest text-[10px] hover:text-[#F47B20] transition-colors" href="#">Global Support</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="text-white font-bold text-xs uppercase tracking-[0.2em] font-label">Headquarters</h5>
+<p class="text-slate-500 text-xs leading-relaxed">
+                    Robolyne Tech Park<br/>
+                    Nanshan District, Shenzhen<br/>
+                    Guangdong, 518057<br/>
+                    P.R. China
+                </p>
+<div class="flex items-center gap-3">
+<span class="w-3 h-3 rounded-full bg-green-500"></span>
+<span class="text-slate-300 text-xs font-semibold">Global Support: Online</span>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto mt-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-slate-500 uppercase tracking-widest text-[10px] font-body">
+                © 2024 ROBOLYNE AUTOMATION. PRECISION ENGINEERED.
+            </div>
+<div class="flex gap-6">
+<a class="text-slate-500 hover:text-[#F47B20] transition-colors" href="#"><span class="material-symbols-outlined" data-icon="language">language</span></a>
+<a class="text-slate-500 hover:text-[#F47B20] transition-colors" href="#"><span class="material-symbols-outlined" data-icon="hub">hub</span></a>
+<a class="text-slate-500 hover:text-[#F47B20] transition-colors" href="#"><span class="material-symbols-outlined" data-icon="groups">groups</span></a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Case Study: 15,000-Pallet ASRS in a -30°C Cold Chain Facility | RoboLyne</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#582600",
+                    "surface-dim": "#10141a",
+                    "on-primary": "#522300",
+                    "on-tertiary-fixed": "#001c38",
+                    "secondary": "#c0c6d8",
+                    "surface-bright": "#353940",
+                    "on-tertiary-container": "#003563",
+                    "on-secondary-container": "#b2b8ca",
+                    "tertiary-container": "#51a0f8",
+                    "primary-container": "#f47b20",
+                    "primary": "#ffb68b",
+                    "surface-variant": "#31353c",
+                    "on-primary-fixed-variant": "#753400",
+                    "primary-fixed": "#ffdbc8",
+                    "background": "#10141a",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-highest": "#31353c",
+                    "error": "#ffb4ab",
+                    "on-surface-variant": "#dec1b1",
+                    "tertiary-fixed": "#d3e4ff",
+                    "on-secondary-fixed-variant": "#404755",
+                    "surface-container-lowest": "#0a0e14",
+                    "error-container": "#93000a",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed-variant": "#004882",
+                    "secondary-container": "#424958",
+                    "inverse-primary": "#994700",
+                    "secondary-fixed-dim": "#c0c6d8",
+                    "surface-container-high": "#262a31",
+                    "on-tertiary": "#00315c",
+                    "tertiary": "#a2c9ff",
+                    "on-secondary": "#2a313e",
+                    "on-secondary-fixed": "#151c28",
+                    "surface-container-low": "#181c22",
+                    "on-primary-fixed": "#321200",
+                    "surface-tint": "#ffb68b",
+                    "surface-container": "#1c2026",
+                    "primary-fixed-dim": "#ffb68b",
+                    "inverse-on-surface": "#2d3137",
+                    "on-background": "#dfe2eb",
+                    "outline": "#a68b7d",
+                    "tertiary-fixed-dim": "#a2c9ff",
+                    "outline-variant": "#574237",
+                    "surface": "#10141a",
+                    "inverse-surface": "#dfe2eb",
+                    "on-surface": "#dfe2eb",
+                    "secondary-fixed": "#dce2f4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "body": [
+                            "Inter"
+                    ],
+                    "label": [
+                            "Inter"
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col">
+<!-- TopNavBar (from JSON) -->
+<nav class="fixed top-0 w-full z-50 bg-[#1c2026]/80 backdrop-blur-md shadow-2xl shadow-black/40">
+<div class="flex justify-between items-center max-w-screen-2xl mx-auto px-8 h-20">
+<a href="index.html" class="text-2xl font-bold tracking-tighter text-[#f47b20]">RoboLyne</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="index.html">Home</a>
+<div class="group relative">
+<a href="products.html" class="text-slate-400 font-medium hover:text-white transition-colors duration-200 flex items-center gap-1"> Products <span class="material-symbols-outlined text-sm" style="transition:transform 0.2s;display:inline-block">expand_more</span></a>
+<div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="min-width:220px">
+<div class="bg-[#1c2026] rounded-xl shadow-[0_24px_48px_rgba(0,0,0,0.5)] border border-[#574237]/30 overflow-hidden">
+<div class="px-4 py-2 border-b border-[#574237]/20">
+<span class="text-[10px] font-bold uppercase tracking-widest text-[#f47b20]">Hardware</span>
+</div>
+<a href="products-agv-forklift.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">forklift</span>AGV Forklift</a>
+<a href="products-agv-roller.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">conveyor_belt</span>AGV Roller</a>
+<a href="products-storage-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">inventory_2</span>Storage AGV</a>
+<a href="products-lifting-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">lift</span>Lifting AGV</a>
+<a href="products-composite-robot.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors border-b border-[#574237]/20">
+<span class="material-symbols-outlined text-[#f47b20] text-base">precision_manufacturing</span>Composite Mobile Robot</a>
+<a href="products.html" class="flex items-center justify-between px-4 py-3 text-xs font-bold text-[#f47b20] hover:bg-[#262a31] transition-colors">
+All Products <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+<div class="group relative">
+<a href="solutions-asrs.html" class="text-slate-400 font-medium hover:text-white transition-colors duration-200 flex items-center gap-1"> Solutions <span class="material-symbols-outlined text-sm">expand_more</span></a>
+<div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="min-width:220px">
+<div class="bg-[#1c2026] rounded-xl shadow-[0_24px_48px_rgba(0,0,0,0.5)] border border-[#574237]/30 overflow-hidden">
+<div class="px-4 py-2 border-b border-[#574237]/20">
+<span class="text-[10px] font-bold uppercase tracking-widest text-[#f47b20]">By Application</span>
+</div>
+<a href="solutions-asrs.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">shelves</span>ASRS Systems</a>
+<a href="solutions-picking.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">package_2</span>Picking Solutions</a>
+<a href="solutions-material.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">move_item</span>Material Handling</a>
+<a href="solutions-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">smart_toy</span>Specialized AGV</a>
+<a href="solutions-software.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors border-b border-[#574237]/20">
+<span class="material-symbols-outlined text-[#f47b20] text-base">dashboard</span>Control Software</a>
+<a href="case-studies.html" class="flex items-center justify-between px-4 py-3 text-xs font-bold text-[#f47b20] hover:bg-[#262a31] transition-colors">
+View Case Studies <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+<a class="text-[#f47b20] border-b-2 border-[#f47b20] pb-1 font-medium transition-colors duration-200" href="case-studies.html">Case Studies</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="about.html">About</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="contact.html">Contact</a>
+</div>
+<a href="contact.html" class="primary-gradient text-on-primary-container px-6 py-3 rounded-xl font-bold text-sm hover:brightness-110 active:scale-95 transition-all duration-200 shadow-lg shadow-primary-container/20"> Get a Quote </a>
+</div>
+</nav>
+<main class="flex-grow pt-24">
+<!-- Hero Section -->
+<section class="relative bg-surface-container-lowest overflow-hidden border-b border-surface-container-low pt-16 pb-24">
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/20 to-surface-dim"></div>
+<img alt="Warehouse facility background" class="w-full h-full object-cover mix-blend-overlay" data-alt="Dark industrial warehouse setting with robotic automation tracks glowing softly in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYWVyyauGDDQ5Ltt8nNnQQsSCeMZivBMsFJMt_hrvYeCFtr9nge9dpRjIo2zA-iWvRmPkSb-QeDP3eTMRivQQwSZMpYC7NvQHLjGmKiQ1lwtUn8mXe3ZMMiH4AM9-Xw0Gakof_A-PMKUaGdI3hAnY1FK-OPQxyL5DhnNAXLRhtnfULQsuK90XXFUUNKTqPGsmO73ZnrCKPEwnt0qczfraKg_hCqW2-HDOcHoFK5mVPzxOUjfILcbxf8p63OIFuI9jy3hco76fXgQI"/>
+</div>
+<div class="max-w-[1440px] mx-auto px-8 relative z-10 flex flex-col md:flex-row gap-16 items-start">
+<div class="flex-1">
+<div class="flex items-center space-x-2 text-label text-on-surface-variant mb-6">
+<span>Home</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span>Case Studies</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface">ASRS</span>
+</div>
+<div class="inline-flex items-center space-x-2 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-md text-label font-semibold mb-8 uppercase tracking-wider">
+<span>Solution: ASRS</span>
+</div>
+<div class="text-primary font-body text-body-md font-semibold mb-4 tracking-wide">
+                        CLIENT: Leading Cold Chain Distributor, Southeast Asia
+                    </div>
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold text-on-surface leading-tight tracking-tight mb-6 max-w-4xl">
+                        15,000-Pallet ASRS in a -30°C Cold Chain Facility
+                    </h1>
+<p class="font-body text-xl text-on-surface-variant mb-12 max-w-3xl leading-relaxed">
+                        How RoboLyne delivered a fully automated storage &amp; retrieval system for temperature-sensitive goods in 10 weeks.
+                    </p>
+<!-- Hero KPIs -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+<div class="bg-surface-container p-6 rounded-DEFAULT border border-outline-variant/15 flex flex-col items-start relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<span class="font-headline text-3xl font-bold text-primary tracking-tight mb-1 group-hover:scale-105 transition-transform origin-left">15,000</span>
+<span class="font-body text-label text-on-surface-variant uppercase tracking-wider">Pallet Positions</span>
+</div>
+<div class="bg-surface-container p-6 rounded-DEFAULT border border-outline-variant/15 flex flex-col items-start relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary-container"></div>
+<span class="font-headline text-3xl font-bold text-primary tracking-tight mb-1 group-hover:scale-105 transition-transform origin-left">3x</span>
+<span class="font-body text-label text-on-surface-variant uppercase tracking-wider">Storage Density</span>
+</div>
+<div class="bg-surface-container p-6 rounded-DEFAULT border border-outline-variant/15 flex flex-col items-start relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-tertiary-container"></div>
+<span class="font-headline text-3xl font-bold text-primary tracking-tight mb-1 group-hover:scale-105 transition-transform origin-left">10-Week</span>
+<span class="font-body text-label text-on-surface-variant uppercase tracking-wider">Go-Live</span>
+</div>
+<div class="bg-surface-container p-6 rounded-DEFAULT border border-outline-variant/15 flex flex-col items-start relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<span class="font-headline text-3xl font-bold text-primary tracking-tight mb-1 group-hover:scale-105 transition-transform origin-left">99.6%</span>
+<span class="font-body text-label text-on-surface-variant uppercase tracking-wider">Order Accuracy</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content -->
+<div class="max-w-[1440px] mx-auto px-8 py-20 flex flex-col gap-24">
+<!-- Client Background -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<div class="col-span-1 md:col-span-8">
+<h2 class="font-headline text-3xl font-bold text-on-surface mb-6">Client Background &amp; Context</h2>
+<p class="font-body text-body-md text-on-surface-variant leading-relaxed mb-6">
+                        Operating at the critical intersection of food safety and rapid logistics, this leading Southeast Asian cold chain distributor faced a defining inflection point. With consumer demand for frozen FMCG products surging across the region, their existing infrastructure—reliant on manual forklift operations within harsh, -30°C environments—was struggling to maintain the necessary throughput and accuracy.
+                    </p>
+<p class="font-body text-body-md text-on-surface-variant leading-relaxed">
+                        The scale of their operation required a fundamental shift in storage philosophy. They needed to maximize vertical space utilization while removing human operators from extreme temperature zones, all without disrupting ongoing, round-the-clock distribution activities.
+                    </p>
+</div>
+<div class="col-span-1 md:col-span-4">
+<div class="bg-surface-container-low p-8 rounded-lg border border-outline-variant/20 h-full flex flex-col justify-center">
+<h3 class="font-headline text-xl font-bold text-on-surface mb-6 border-b border-surface-container pb-4">Project Parameters</h3>
+<dl class="space-y-4">
+<div class="flex justify-between items-center">
+<dt class="font-body text-label text-on-surface-variant">Industry</dt>
+<dd class="font-body text-body-md font-semibold text-on-surface">FMCG Cold Chain</dd>
+</div>
+<div class="flex justify-between items-center">
+<dt class="font-body text-label text-on-surface-variant">Region</dt>
+<dd class="font-body text-body-md font-semibold text-on-surface">Southeast Asia</dd>
+</div>
+<div class="flex justify-between items-center">
+<dt class="font-body text-label text-on-surface-variant">Facility Size</dt>
+<dd class="font-body text-body-md font-semibold text-on-surface">120,000m²</dd>
+</div>
+</dl>
+</div>
+</div>
+</section>
+<!-- The Challenge -->
+<section class="bg-surface-container-low p-12 rounded-xl -mx-8 px-8 md:mx-0 md:px-12 border-l-4 border-error">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-headline text-3xl font-bold text-on-surface mb-8">The Challenge</h2>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<div class="bg-surface-container p-2 rounded-md shrink-0">
+<span class="material-symbols-outlined text-error">ac_unit</span>
+</div>
+<div>
+<h4 class="font-headline text-lg font-semibold text-on-surface mb-1">Harsh Operating Conditions</h4>
+<p class="font-body text-body-md text-on-surface-variant">Manual forklift operations in -30°C freezing temperatures severely limited shift durations and posed significant health and safety risks.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="bg-surface-container p-2 rounded-md shrink-0">
+<span class="material-symbols-outlined text-primary-container">warehouse</span>
+</div>
+<div>
+<h4 class="font-headline text-lg font-semibold text-on-surface mb-1">Capacity Ceiling Reached</h4>
+<p class="font-body text-body-md text-on-surface-variant">With facility utilization constantly hovering at 90%, they lacked the physical footprint to expand using traditional racking.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="bg-surface-container p-2 rounded-md shrink-0">
+<span class="material-symbols-outlined text-error">group_off</span>
+</div>
+<div>
+<h4 class="font-headline text-lg font-semibold text-on-surface mb-1">Severe Labor Shortages</h4>
+<p class="font-body text-body-md text-on-surface-variant">High turnover rates for cold-store operators created unpredictable operational bottlenecks.</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<div class="bg-surface p-8 rounded-lg border border-outline-variant/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] relative">
+<span class="material-symbols-outlined absolute -top-4 -left-4 text-5xl text-primary-container/20">format_quote</span>
+<blockquote class="font-headline text-xl italic text-on-surface leading-relaxed mb-6 relative z-10">
+                                "The manual environment was becoming unsustainable for our operators. We needed a solution that would eliminate the human element from the deep freeze while simultaneously tripling our density in the same footprint."
+                            </blockquote>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-bright rounded-full overflow-hidden">
+<img alt="VP of Logistics" class="w-full h-full object-cover" data-alt="Professional headshot of a mature male executive in logistics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnGWnfRhiCXlJG5u9cJR53NuKl1kMa5PIs6z6GeuzI153Z4Wg01aTGor-IhOkh47OA1ncz0lY-Ndes11CaRM2DppkVyNMS-I6B3BphZbt72TFxIfYhbg3xImJ0Pp3P3yYjuOdKLByFkRgwGxdv-2E8MruwNjQge407svdsrFzNcFVyhfypy-q23eTzC5FhpJ492lYzSBuB1sWem7ZtMyWyXt2rSWouIIe9de04gZX1M05aPGOwYTN_FCrOk41a92Q9x35A_Sc3VzY"/>
+</div>
+<div>
+<div class="font-headline font-semibold text-on-surface">VP of Supply Chain Logistics</div>
+<div class="font-body text-label text-on-surface-variant">Client Organization</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer (from JSON) -->
+<footer class="w-full pt-20 pb-10 bg-[#10141a] bg-[#181c22]">
+<div class="grid grid-cols-2 md:grid-cols-5 gap-12 px-8 max-w-[1440px] mx-auto">
+<div class="col-span-2 md:col-span-2">
+<div class="text-xl font-black text-orange-500 mb-4">RoboLyne</div>
+<p class="font-['Inter'] text-sm text-slate-400 max-w-xs mb-6">
+                    Engineering the future of industrial automation with kinetic precision and unyielding reliability.
+                </p>
+<div class="font-['Inter'] text-sm text-slate-400">
+                    © 2024 RoboLyne Industrial Automation. All rights reserved.
+                </div>
+</div>
+<div class="flex flex-col space-y-3">
+<h4 class="font-headline text-on-surface font-semibold mb-2">Platform</h4>
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-orange-400 transition-colors cursor-pointer" href="solutions-asrs.html">Solutions</a>
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-orange-400 transition-colors cursor-pointer" href="#">Technology</a>
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-orange-400 transition-colors cursor-pointer" href="#">Support</a>
+</div>
+<div class="flex flex-col space-y-3">
+<h4 class="font-headline text-on-surface font-semibold mb-2">Company</h4>
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-orange-400 transition-colors cursor-pointer" href="#">Resources</a>
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-orange-400 transition-colors cursor-pointer" href="#">Company</a>
+</div>
+<div class="flex flex-col space-y-3">
+<h4 class="font-headline text-on-surface font-semibold mb-2">Connect</h4>
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-orange-400 transition-colors cursor-pointer flex items-center gap-2" href="#"><span class="material-symbols-outlined text-sm">mail</span> Contact Sales</a>
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-orange-400 transition-colors cursor-pointer flex items-center gap-2" href="#"><span class="material-symbols-outlined text-sm">open_in_new</span> LinkedIn</a>
+</div>
+</div>
+</footer>
+</body></html>

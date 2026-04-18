@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Material Handling Solution | RoboLyne Industrial Automation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#dfe2eb",
+                        "surface": "#10141a",
+                        "primary-container": "#f47b20",
+                        "tertiary-fixed": "#cae6ff",
+                        "on-surface-variant": "#dec1b1",
+                        "primary-fixed-dim": "#ffb68b",
+                        "secondary-fixed": "#ffdbc8",
+                        "outline": "#a68b7d",
+                        "tertiary-container": "#00a6ef",
+                        "surface-dim": "#10141a",
+                        "surface-container-highest": "#31353c",
+                        "surface-variant": "#31353c",
+                        "surface-container-high": "#262a31",
+                        "secondary": "#ffb68b",
+                        "on-tertiary": "#00344e",
+                        "on-primary-container": "#582600",
+                        "secondary-fixed-dim": "#ffb68b",
+                        "on-secondary-container": "#efa87e",
+                        "on-primary": "#522300",
+                        "surface-container-lowest": "#0a0e14",
+                        "background": "#10141a",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#ffdbc8",
+                        "on-surface": "#dfe2eb",
+                        "surface-container": "#1c2026",
+                        "on-error": "#690005",
+                        "on-secondary": "#502405",
+                        "on-tertiary-container": "#003854",
+                        "error-container": "#93000a",
+                        "outline-variant": "#574237",
+                        "surface-tint": "#ffb68b",
+                        "tertiary-fixed-dim": "#8ccdff",
+                        "on-primary-fixed-variant": "#753400",
+                        "inverse-surface": "#dfe2eb",
+                        "surface-bright": "#353940",
+                        "primary": "#ffb68b",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#6b3a19",
+                        "inverse-on-surface": "#2d3137",
+                        "on-tertiary-fixed": "#001e2f",
+                        "tertiary": "#8ccdff",
+                        "on-tertiary-fixed-variant": "#004b6f",
+                        "on-primary-fixed": "#321200",
+                        "secondary-container": "#6e3c1b",
+                        "inverse-primary": "#994700",
+                        "on-secondary-fixed": "#321200",
+                        "surface-container-low": "#181c22"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#1c2026]/80 backdrop-blur-md shadow-2xl shadow-black/40">
+<div class="flex justify-between items-center max-w-screen-2xl mx-auto px-8 h-20">
+<a href="index.html" class="text-2xl font-bold tracking-tighter text-[#f47b20]">RoboLyne</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="index.html">Home</a>
+<div class="group relative">
+<a href="products.html" class="text-slate-400 font-medium hover:text-white transition-colors duration-200 flex items-center gap-1"> Products <span class="material-symbols-outlined text-sm" style="transition:transform 0.2s;display:inline-block">expand_more</span></a>
+<div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="min-width:220px">
+<div class="bg-[#1c2026] rounded-xl shadow-[0_24px_48px_rgba(0,0,0,0.5)] border border-[#574237]/30 overflow-hidden">
+<div class="px-4 py-2 border-b border-[#574237]/20">
+<span class="text-[10px] font-bold uppercase tracking-widest text-[#f47b20]">Hardware</span>
+</div>
+<a href="products-agv-forklift.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">forklift</span>AGV Forklift</a>
+<a href="products-agv-roller.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">conveyor_belt</span>AGV Roller</a>
+<a href="products-storage-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">inventory_2</span>Storage AGV</a>
+<a href="products-lifting-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">lift</span>Lifting AGV</a>
+<a href="products-composite-robot.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors border-b border-[#574237]/20">
+<span class="material-symbols-outlined text-[#f47b20] text-base">precision_manufacturing</span>Composite Mobile Robot</a>
+<a href="products.html" class="flex items-center justify-between px-4 py-3 text-xs font-bold text-[#f47b20] hover:bg-[#262a31] transition-colors">
+All Products <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+<div class="group relative">
+<a href="solutions-asrs.html" class="text-[#f47b20] border-b-2 border-[#f47b20] pb-1 font-medium transition-colors duration-200 flex items-center gap-1"> Solutions <span class="material-symbols-outlined text-sm">expand_more</span></a>
+<div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="min-width:220px">
+<div class="bg-[#1c2026] rounded-xl shadow-[0_24px_48px_rgba(0,0,0,0.5)] border border-[#574237]/30 overflow-hidden">
+<div class="px-4 py-2 border-b border-[#574237]/20">
+<span class="text-[10px] font-bold uppercase tracking-widest text-[#f47b20]">By Application</span>
+</div>
+<a href="solutions-asrs.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">shelves</span>ASRS Systems</a>
+<a href="solutions-picking.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">package_2</span>Picking Solutions</a>
+<a href="solutions-material.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">move_item</span>Material Handling</a>
+<a href="solutions-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">smart_toy</span>Specialized AGV</a>
+<a href="solutions-software.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors border-b border-[#574237]/20">
+<span class="material-symbols-outlined text-[#f47b20] text-base">dashboard</span>Control Software</a>
+<a href="case-studies.html" class="flex items-center justify-between px-4 py-3 text-xs font-bold text-[#f47b20] hover:bg-[#262a31] transition-colors">
+View Case Studies <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="case-studies.html">Case Studies</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="about.html">About</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="contact.html">Contact</a>
+</div>
+<a href="contact.html" class="primary-gradient text-on-primary-container px-6 py-3 rounded-xl font-bold text-sm hover:brightness-110 active:scale-95 transition-all duration-200 shadow-lg shadow-primary-container/20"> Get a Quote </a>
+</div>
+</nav>
+<main class="pt-16">
+<!-- HERO SECTION -->
+<section class="relative overflow-hidden bg-surface-container-lowest min-h-[870px] flex items-center">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,#f47b20_0%,transparent_50%)]"></div>
+</div>
+<div class="container mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
+<div class="lg:col-span-7 space-y-8">
+<nav class="flex items-center gap-2 text-xs font-medium tracking-widest text-gray-500 uppercase">
+<span>Home</span>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span>Solutions</span>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span class="text-primary-container">Material Handling</span>
+</nav>
+<div class="space-y-4">
+<span class="inline-block py-1 px-3 bg-primary-container/10 border border-primary-container/20 rounded text-[10px] font-bold text-primary-container tracking-[0.2em] uppercase">Solutions / Material Handling</span>
+<h1 class="text-5xl lg:text-7xl font-extrabold tracking-tighter leading-tight text-on-surface">
+                            Intelligent <span class="text-primary-container">AGV-Powered</span> Material Flow
+                        </h1>
+<p class="text-xl text-gray-400 max-w-2xl font-body leading-relaxed">
+                            Streamline intra-logistics with precision, speed, and zero human error. RoboLyne's material handling AGVs optimize every movement — from receiving dock to shipping station.
+                        </p>
+</div>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-bold py-4 px-8 rounded-xl shadow-lg hover:brightness-110 transition-all duration-200 scale-95 active:scale-90">
+                            Get a Material Flow Assessment
+                        </button>
+<button class="border border-outline-variant/40 hover:bg-surface-container-high text-on-surface font-bold py-4 px-8 rounded-xl transition-all duration-200 scale-95 active:scale-90">
+                            View Compatible Products
+                        </button>
+</div>
+</div>
+<div class="lg:col-span-5">
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/10 shadow-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-8xl" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+</div>
+<h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-8">Performance Metrics</h3>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-1">
+<div class="text-4xl font-extrabold text-primary-container font-headline">35%</div>
+<div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Transport Cost Reduction</div>
+</div>
+<div class="space-y-1">
+<div class="text-4xl font-extrabold text-primary-container font-headline">2x</div>
+<div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Throughput Increase</div>
+</div>
+<div class="space-y-1">
+<div class="text-4xl font-extrabold text-primary-container font-headline">99.8%</div>
+<div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Delivery Accuracy</div>
+</div>
+<div class="space-y-1">
+<div class="text-4xl font-extrabold text-primary-container font-headline">0</div>
+<div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Operator Injuries</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- KPI BAR -->
+<section class="bg-[#181c22] border-y border-outline-variant/5">
+<div class="container mx-auto px-8 py-10">
+<div class="flex flex-wrap justify-between items-center gap-8">
+<div class="flex items-center gap-4">
+<span class="text-3xl font-extrabold text-primary-container">35%</span>
+<span class="text-xs font-medium text-gray-400 uppercase tracking-widest">Cost Reduction</span>
+</div>
+<div class="h-8 w-px bg-outline-variant/20 hidden md:block"></div>
+<div class="flex items-center gap-4">
+<span class="text-3xl font-extrabold text-primary-container">2x</span>
+<span class="text-xs font-medium text-gray-400 uppercase tracking-widest">Throughput</span>
+</div>
+<div class="h-8 w-px bg-outline-variant/20 hidden md:block"></div>
+<div class="flex items-center gap-4">
+<span class="text-3xl font-extrabold text-primary-container">99.8%</span>
+<span class="text-xs font-medium text-gray-400 uppercase tracking-widest">Accuracy</span>
+</div>
+<div class="h-8 w-px bg-outline-variant/20 hidden md:block"></div>
+<div class="flex items-center gap-4">
+<span class="text-3xl font-extrabold text-primary-container">30%</span>
+<span class="text-xs font-medium text-gray-400 uppercase tracking-widest">Faster Cycle Times</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SOLUTION OVERVIEW -->
+<section class="bg-[#161B22] py-24">
+<div class="container mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-8">
+<div>
+<span class="text-primary-container font-bold text-xs tracking-widest uppercase mb-4 block">What We Solve</span>
+<h2 class="text-4xl font-bold text-on-surface mb-6">From Receiving to Shipping — Fully Automated</h2>
+<p class="text-gray-400 font-body leading-relaxed mb-8">
+                                Traditional material flow is plagued by bottlenecks, labor shortages, and rising operational costs. RoboLyne's AGV infrastructure acts as the circulatory system of your facility, ensuring that the right materials arrive at the right station exactly when they are needed.
+                            </p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-on-surface font-medium">Dock-to-stock automation</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-on-surface font-medium">Cross-docking support</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-on-surface font-medium">Production line feeding</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-on-surface font-medium">Returns handling</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="bg-surface-container-low p-10 rounded-xl border border-outline-variant/10">
+<div class="space-y-12">
+<div class="flex flex-col items-center">
+<div class="flex items-center justify-between w-full max-w-lg relative">
+<div class="absolute top-1/2 left-0 right-0 h-0.5 bg-outline-variant/20 -z-0"></div>
+<div class="z-10 bg-surface-container border border-primary-container p-3 rounded shadow-lg text-center">
+<div class="text-[10px] font-bold text-primary-container uppercase mb-1">Step 01</div>
+<div class="text-xs font-bold">Inbound Receiving</div>
+</div>
+<div class="z-10 bg-surface-container border border-outline-variant/40 p-3 rounded shadow-lg text-center">
+<div class="text-[10px] font-bold text-gray-500 uppercase mb-1">Step 02</div>
+<div class="text-xs font-bold">Sorting</div>
+</div>
+<div class="z-10 bg-surface-container border border-outline-variant/40 p-3 rounded shadow-lg text-center">
+<div class="text-[10px] font-bold text-gray-500 uppercase mb-1">Step 03</div>
+<div class="text-xs font-bold">Storage</div>
+</div>
+</div>
+<div class="h-12 w-0.5 bg-outline-variant/20 my-4"></div>
+<div class="flex items-center justify-center gap-16 w-full max-w-lg">
+<div class="z-10 bg-surface-container border border-outline-variant/40 p-3 rounded shadow-lg text-center">
+<div class="text-[10px] font-bold text-gray-500 uppercase mb-1">Step 04</div>
+<div class="text-xs font-bold">Production Feeding</div>
+</div>
+<div class="material-symbols-outlined text-gray-600">arrow_forward</div>
+<div class="z-10 bg-surface-container border border-primary-container p-3 rounded shadow-lg text-center">
+<div class="text-[10px] font-bold text-primary-container uppercase mb-1">Step 05</div>
+<div class="text-xs font-bold">Outbound Dispatch</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-high/50 p-6 rounded text-sm text-gray-400 italic text-center">
+                                "Our multi-path AGV routing ensures zero congestion even during Step 03 peak storage cycles."
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- RELATED PRODUCTS -->
+<section class="bg-[#0D1117] py-24">
+<div class="container mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<div>
+<span class="text-primary-container font-bold text-xs tracking-widest uppercase mb-4 block">Compatible Products</span>
+<h2 class="text-4xl font-bold text-on-surface">AGVs Built for Material Flow</h2>
+</div>
+<a class="text-primary-container font-bold flex items-center gap-2 hover:underline" href="#">
+                        Explore Full Inventory <span class="material-symbols-outlined">trending_flat</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Product 1 -->
+<div class="bg-surface-container rounded-xl overflow-hidden group border border-transparent hover:border-primary-container/30 transition-all duration-300">
+<div class="h-64 overflow-hidden relative">
+<img alt="AGV Forklift" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Industrial robotic autonomous forklift moving a heavy wooden pallet in a dark modern warehouse with orange guide lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcGa46pT3rtQQ0eYvca8JFVZXhF-1_OB70c_vDbsK-dMVIcYQxEWAMoInsyRFZkKQPNwWH3KkP87bNuSPNyZuZQr5NS9RukA07umO7O6Ip3e82oLy3iYNjP9k6xxQrzvr5K4Du4THFUfMg_t_B0PopABjJ5eNG_UFSxVPygq9oSI6TTE15ERTE6hJTTimC5a8Dg5l9r-RDXbA3O2Zt_Sr13BzRHac5cz5N_IERPGPYQGl0AdD2kJyVLqlMqwu4gem17z2lhkV8LPI"/>
+<div class="absolute top-4 right-4 px-2 py-1 bg-surface/80 backdrop-blur-sm rounded text-[10px] font-bold uppercase tracking-wider">Heavy Duty</div>
+</div>
+<div class="p-8 space-y-4">
+<h3 class="text-xl font-bold text-on-surface">AGV Forklift</h3>
+<p class="text-gray-400 text-sm leading-relaxed">Precision engineered for heavy pallet movement and high-reach shelving operations.</p>
+<a class="inline-flex items-center gap-2 text-primary-container font-bold text-sm" href="#">
+                                View Product <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="bg-surface-container rounded-xl overflow-hidden group border border-transparent hover:border-primary-container/30 transition-all duration-300">
+<div class="h-64 overflow-hidden relative">
+<img alt="Lifting AGV" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Sleek low-profile autonomous mobile robot lifting a logistics rack in a high-tech automated facility" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh9aSgHWh4hDiguzX-KqrQS3jL5EDrCBxRnNtgXxMVPeovhNAwDunBfT5vvoSeK3_kyhRC-w9TdX-QWCg4YzX6GDoWUk842eVUpd5wZFNEV81JBtXQpKAXbbGyRIkINlKVraoplloqsIVtLrBRWr8v-jO8iYtcCZqdhBLV4Nv57KxSBR72xzKA2dC5nahJAsBdCp3NxdQ8ylavIbkyYqxxkmGUaAgQFPO5hXiqVSrKUM8yVwA-zFS6iIgcMVCi0RIFnHiZ5leneA8"/>
+<div class="absolute top-4 right-4 px-2 py-1 bg-surface/80 backdrop-blur-sm rounded text-[10px] font-bold uppercase tracking-wider">Mid-Weight</div>
+</div>
+<div class="p-8 space-y-4">
+<h3 class="text-xl font-bold text-on-surface">Lifting AGV</h3>
+<p class="text-gray-400 text-sm leading-relaxed">Versatile lifting platform for mid-weight transfers and dynamic rack transport.</p>
+<a class="inline-flex items-center gap-2 text-primary-container font-bold text-sm" href="#">
+                                View Product <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="bg-surface-container rounded-xl overflow-hidden group border border-transparent hover:border-primary-container/30 transition-all duration-300">
+<div class="h-64 overflow-hidden relative">
+<img alt="AGV Roller" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Autonomous robot with integrated roller conveyor top transferring a cardboard box to a fixed conveyor line" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUN7rYjSinuveeu2_zGg3ZDibC-jD7If1O_ocgI1b9pYc383v5r-PxZMb4IEZuo-eS50fGu9iDVVxTxa0dGq_rNePAI0el5DGZFLoH_958ZFB9QpxGDXOH679QqOVh9tu3IYBlcGlAGb4U8U4lQa051ANUXFwk5mNmxIicIL0-Jx2Z0mkq66ENdPsyh1Y4Y6Ki-ahQaumf1NwNse6d6778m9luStrCvSiOr6kMbtqZiZa-jg1VzDVLqhwTfhFrC29fysWrcnf4NwI"/>
+<div class="absolute top-4 right-4 px-2 py-1 bg-surface/80 backdrop-blur-sm rounded text-[10px] font-bold uppercase tracking-wider">Conveyor Link</div>
+</div>
+<div class="p-8 space-y-4">
+<h3 class="text-xl font-bold text-on-surface">AGV Roller</h3>
+<p class="text-gray-400 text-sm leading-relaxed">Seamlessly integrates with existing conveyor systems for end-of-line automation.</p>
+<a class="inline-flex items-center gap-2 text-primary-container font-bold text-sm" href="#">
+                                View Product <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BENEFITS COMPARISON -->
+<section class="bg-[#161B22] py-24">
+<div class="container mx-auto px-8">
+<h2 class="text-4xl font-bold text-on-surface mb-16 text-center max-w-3xl mx-auto leading-tight">
+                    Why AGV-Based Material Handling Outperforms Traditional Systems
+                </h2>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/20">
+<th class="py-6 px-4 text-xs font-bold text-gray-500 uppercase tracking-widest">Key Factor</th>
+<th class="py-6 px-4 text-lg font-bold text-gray-400">Traditional Systems</th>
+<th class="py-6 px-4 text-lg font-bold text-primary-container">RoboLyne AGV Flow</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr>
+<td class="py-8 px-4 font-bold text-on-surface">Accuracy</td>
+<td class="py-8 px-4 text-gray-400">Susceptible to human error (85-90%)</td>
+<td class="py-8 px-4 text-on-surface">Sensor-driven precision (99.8%)</td>
+</tr>
+<tr>
+<td class="py-8 px-4 font-bold text-on-surface">Cost</td>
+<td class="py-8 px-4 text-gray-400">High ongoing labor &amp; training costs</td>
+<td class="py-8 px-4 text-on-surface">Fixed CapEx with rapid ROI (12-18mo)</td>
+</tr>
+<tr>
+<td class="py-8 px-4 font-bold text-on-surface">Flexibility</td>
+<td class="py-8 px-4 text-gray-400">Rigid infrastructure, hard to scale</td>
+<td class="py-8 px-4 text-on-surface">Software-mapped, dynamic rerouting</td>
+</tr>
+<tr>
+<td class="py-8 px-4 font-bold text-on-surface">Safety</td>
+<td class="py-8 px-4 text-gray-400">High risk of forklift accidents</td>
+<td class="py-8 px-4 text-on-surface">360° LiDAR obstacle detection</td>
+</tr>
+<tr>
+<td class="py-8 px-4 font-bold text-on-surface">Scalability</td>
+<td class="py-8 px-4 text-gray-400">Requires hiring &amp; onboarding waves</td>
+<td class="py-8 px-4 text-on-surface">Deploy new units in &lt;24 hours</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- CASE STUDIES -->
+<section class="bg-[#0D1117] py-24">
+<div class="container mx-auto px-8">
+<div class="mb-16 text-center">
+<span class="text-primary-container font-bold text-xs tracking-widest uppercase mb-4 block">Success Stories</span>
+<h2 class="text-4xl font-bold text-on-surface">Proven Industrial Impact</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="bg-surface-container-high p-8 rounded-xl border border-outline-variant/5 hover:bg-surface-container transition-colors duration-300">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-primary-container text-4xl">directions_car</span>
+<div>
+<h3 class="font-bold text-lg">Auto Parts Distribution</h3>
+<p class="text-xs text-gray-500 uppercase tracking-widest font-bold">Supply Chain</p>
+</div>
+</div>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-center text-sm">
+<span class="text-gray-400">Fleet Size</span>
+<span class="text-on-surface font-bold">40 AGVs</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-gray-400">Operation</span>
+<span class="text-on-surface font-bold">3-shift (24/7)</span>
+</div>
+</div>
+<p class="text-sm text-gray-400 leading-relaxed mb-6 italic">"Achieved a complete ROI in 14 months by automating our main heavy-haul internal loops."</p>
+</div>
+<!-- Project 2 -->
+<div class="bg-surface-container-high p-8 rounded-xl border border-outline-variant/5 hover:bg-surface-container transition-colors duration-300">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-primary-container text-4xl">inventory_2</span>
+<div>
+<h3 class="font-bold text-lg">FMCG Warehouse</h3>
+<p class="text-xs text-gray-500 uppercase tracking-widest font-bold">Consumer Goods</p>
+</div>
+</div>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-center text-sm">
+<span class="text-gray-400">Speed</span>
+<span class="text-on-surface font-bold">Dock-to-stock in 4m</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-gray-400">Uptime</span>
+<span class="text-on-surface font-bold">99.2% Overall</span>
+</div>
+</div>
+<p class="text-sm text-gray-400 leading-relaxed mb-6 italic">"Our dock throughput surged by 65% since implementing the RoboLyne Roller series."</p>
+</div>
+<!-- Project 3 -->
+<div class="bg-surface-container-high p-8 rounded-xl border border-outline-variant/5 hover:bg-surface-container transition-colors duration-300">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-primary-container text-4xl">shopping_cart</span>
+<div>
+<h3 class="font-bold text-lg">Retail DC</h3>
+<p class="text-xs text-gray-500 uppercase tracking-widest font-bold">E-commerce</p>
+</div>
+</div>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-center text-sm">
+<span class="text-gray-400">Capability</span>
+<span class="text-on-surface font-bold">500 SKU/hr</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-gray-400">Process</span>
+<span class="text-on-surface font-bold">Cross-docking</span>
+</div>
+</div>
+<p class="text-sm text-gray-400 leading-relaxed mb-6 italic">"Enabled us to handle peak holiday volume with 20% fewer human pickers needed."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FINAL CTA -->
+<section class="py-24 px-8 relative overflow-hidden">
+<div class="absolute inset-0 bg-primary-container/5 -z-10"></div>
+<div class="container mx-auto max-w-4xl text-center bg-surface-container p-12 lg:p-20 rounded-3xl border border-primary-container/20 shadow-[0_0_80px_rgba(244,123,32,0.1)]">
+<h2 class="text-4xl lg:text-5xl font-bold text-on-surface mb-8">Optimize Your Material Flow Today</h2>
+<p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+                    Take the first step toward a fully autonomous warehouse. Our engineers will analyze your current flow and provide a customized AGV implementation roadmap.
+                </p>
+<div class="flex flex-wrap justify-center gap-6">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-bold py-5 px-10 rounded-xl shadow-xl hover:scale-105 transition-all duration-300">
+                        Request a Flow Assessment
+                    </button>
+<button class="border-2 border-outline-variant/40 text-on-surface font-bold py-5 px-10 rounded-xl hover:bg-surface-container-high transition-all duration-300">
+                        Download Solution Guide
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#10141a] w-full py-12 border-t border-[#262a31]">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-full gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="text-lg font-bold text-[#f47b20]">RoboLyne</div>
+<div class="text-xs font-medium Inter uppercase tracking-widest text-gray-500">
+                    © 2024 RoboLyne Industrial Automation. All rights reserved.
+                </div>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-xs font-medium Inter uppercase tracking-widest text-gray-500 hover:text-[#f47b20] transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs font-medium Inter uppercase tracking-widest text-gray-500 hover:text-[#f47b20] transition-colors" href="#">Terms of Service</a>
+<a class="text-xs font-medium Inter uppercase tracking-widest text-gray-500 hover:text-[#f47b20] transition-colors" href="#">Safety Protocols</a>
+<a class="text-xs font-medium Inter uppercase tracking-widest text-gray-500 hover:text-[#f47b20] transition-colors" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</body></html>

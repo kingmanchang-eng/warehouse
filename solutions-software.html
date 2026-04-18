@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#a68b7d",
+                    "secondary-container": "#6e3c1b",
+                    "secondary": "#ffb68b",
+                    "surface-container-highest": "#31353c",
+                    "on-surface-variant": "#dec1b1",
+                    "inverse-surface": "#dfe2eb",
+                    "on-tertiary-fixed-variant": "#004b6f",
+                    "on-secondary-fixed-variant": "#6b3a19",
+                    "secondary-fixed": "#ffdbc8",
+                    "surface-container-high": "#262a31",
+                    "surface-dim": "#10141a",
+                    "on-tertiary-container": "#003854",
+                    "outline-variant": "#574237",
+                    "on-primary-fixed": "#321200",
+                    "surface-container-low": "#181c22",
+                    "on-primary": "#522300",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed-dim": "#8ccdff",
+                    "surface": "#10141a",
+                    "primary-container": "#f47b20",
+                    "surface-variant": "#31353c",
+                    "on-primary-container": "#582600",
+                    "tertiary-fixed": "#cae6ff",
+                    "surface-tint": "#ffb68b",
+                    "surface-container-lowest": "#0a0e14",
+                    "surface-container": "#1c2026",
+                    "on-tertiary": "#00344e",
+                    "on-tertiary-fixed": "#001e2f",
+                    "inverse-on-surface": "#2d3137",
+                    "on-secondary-container": "#efa87e",
+                    "on-error": "#690005",
+                    "on-primary-fixed-variant": "#753400",
+                    "primary": "#ffb68b",
+                    "on-surface": "#dfe2eb",
+                    "on-secondary": "#502405",
+                    "primary-fixed": "#ffdbc8",
+                    "secondary-fixed-dim": "#ffb68b",
+                    "inverse-primary": "#994700",
+                    "on-secondary-fixed": "#321200",
+                    "surface-bright": "#353940",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-container": "#00a6ef",
+                    "on-background": "#dfe2eb",
+                    "tertiary": "#8ccdff",
+                    "primary-fixed-dim": "#ffb68b",
+                    "background": "#10141a",
+                    "error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #0D1117; color: #dfe2eb; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .module-card:hover { border-left: 4px solid #f47b20; transition: border-left 0.2s ease; }
+        .machined-gradient { background: linear-gradient(135deg, #ffb68b 0%, #f47b20 100%); }
+        .kinetic-blur { backdrop-filter: blur(20px); }
+    </style>
+</head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#1c2026]/80 backdrop-blur-md shadow-2xl shadow-black/40">
+<div class="flex justify-between items-center max-w-screen-2xl mx-auto px-8 h-20">
+<a href="index.html" class="text-2xl font-bold tracking-tighter text-[#f47b20]">RoboLyne</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="index.html">Home</a>
+<div class="group relative">
+<a href="products.html" class="text-slate-400 font-medium hover:text-white transition-colors duration-200 flex items-center gap-1"> Products <span class="material-symbols-outlined text-sm" style="transition:transform 0.2s;display:inline-block">expand_more</span></a>
+<div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="min-width:220px">
+<div class="bg-[#1c2026] rounded-xl shadow-[0_24px_48px_rgba(0,0,0,0.5)] border border-[#574237]/30 overflow-hidden">
+<div class="px-4 py-2 border-b border-[#574237]/20">
+<span class="text-[10px] font-bold uppercase tracking-widest text-[#f47b20]">Hardware</span>
+</div>
+<a href="products-agv-forklift.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">forklift</span>AGV Forklift</a>
+<a href="products-agv-roller.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">conveyor_belt</span>AGV Roller</a>
+<a href="products-storage-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">inventory_2</span>Storage AGV</a>
+<a href="products-lifting-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">lift</span>Lifting AGV</a>
+<a href="products-composite-robot.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors border-b border-[#574237]/20">
+<span class="material-symbols-outlined text-[#f47b20] text-base">precision_manufacturing</span>Composite Mobile Robot</a>
+<a href="products.html" class="flex items-center justify-between px-4 py-3 text-xs font-bold text-[#f47b20] hover:bg-[#262a31] transition-colors">
+All Products <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+<div class="group relative">
+<a href="solutions-asrs.html" class="text-[#f47b20] border-b-2 border-[#f47b20] pb-1 font-medium transition-colors duration-200 flex items-center gap-1"> Solutions <span class="material-symbols-outlined text-sm">expand_more</span></a>
+<div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="min-width:220px">
+<div class="bg-[#1c2026] rounded-xl shadow-[0_24px_48px_rgba(0,0,0,0.5)] border border-[#574237]/30 overflow-hidden">
+<div class="px-4 py-2 border-b border-[#574237]/20">
+<span class="text-[10px] font-bold uppercase tracking-widest text-[#f47b20]">By Application</span>
+</div>
+<a href="solutions-asrs.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">shelves</span>ASRS Systems</a>
+<a href="solutions-picking.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">package_2</span>Picking Solutions</a>
+<a href="solutions-material.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">move_item</span>Material Handling</a>
+<a href="solutions-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">smart_toy</span>Specialized AGV</a>
+<a href="solutions-software.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors border-b border-[#574237]/20">
+<span class="material-symbols-outlined text-[#f47b20] text-base">dashboard</span>Control Software</a>
+<a href="case-studies.html" class="flex items-center justify-between px-4 py-3 text-xs font-bold text-[#f47b20] hover:bg-[#262a31] transition-colors">
+View Case Studies <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="case-studies.html">Case Studies</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="about.html">About</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="contact.html">Contact</a>
+</div>
+<a href="contact.html" class="primary-gradient text-on-primary-container px-6 py-3 rounded-xl font-bold text-sm hover:brightness-110 active:scale-95 transition-all duration-200 shadow-lg shadow-primary-container/20"> Get a Quote </a>
+</div>
+</nav>
+<main class="pt-16">
+<!-- HERO SECTION -->
+<section class="min-h-[870px] flex items-center px-8 md:px-16 py-20 bg-[#0D1117]">
+<div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<nav aria-label="Breadcrumb" class="flex text-xs font-label uppercase tracking-[0.1em] text-outline">
+<span class="hover:text-primary cursor-pointer transition-colors">Home</span>
+<span class="mx-2">/</span>
+<span class="hover:text-primary cursor-pointer transition-colors">Solutions</span>
+<span class="mx-2">/</span>
+<span class="text-on-surface">Software</span>
+</nav>
+<div class="inline-block px-3 py-1 bg-secondary-container/20 border border-secondary-container/30 text-secondary font-label text-[10px] font-bold tracking-[0.2em] uppercase">
+                        SOLUTIONS / SOFTWARE
+                    </div>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tight leading-[1.1] text-on-surface">
+                        Warehouse Control &amp; Intelligence <span class="text-primary">Software</span>
+</h1>
+<p class="text-lg text-on-surface-variant max-w-xl leading-relaxed">
+                        Unify your automated fleet with a single control layer. From real-time dispatch and inventory synchronization to high-fidelity 3D digital twin simulations, RoboLyne is the brain of the modern warehouse.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="machined-gradient text-on-primary-fixed px-8 py-4 rounded-lg font-bold font-headline transition-transform active:scale-95">
+                            Request a Software Demo
+                        </button>
+<button class="border border-outline-variant hover:bg-surface-container-high text-on-surface px-8 py-4 rounded-lg font-bold font-headline transition-all">
+                            Download Software Datasheet
+                        </button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -inset-10 bg-primary/5 blur-[120px] rounded-full"></div>
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/10 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-20">
+<span class="material-symbols-outlined text-6xl">analytics</span>
+</div>
+<h3 class="font-label text-xs font-black tracking-widest text-outline mb-8 uppercase">System Telemetry</h3>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-1">
+<p class="text-4xl font-headline font-extrabold text-primary">5</p>
+<p class="text-xs uppercase tracking-wider text-on-surface-variant">Software Modules</p>
+</div>
+<div class="space-y-1">
+<p class="text-4xl font-headline font-extrabold text-primary">30+</p>
+<p class="text-xs uppercase tracking-wider text-on-surface-variant">WMS Integrations</p>
+</div>
+<div class="space-y-1">
+<p class="text-4xl font-headline font-extrabold text-primary">2.4ms</p>
+<p class="text-xs uppercase tracking-wider text-on-surface-variant">Average Latency</p>
+</div>
+<div class="space-y-1">
+<p class="text-4xl font-headline font-extrabold text-primary">99.9%</p>
+<p class="text-xs uppercase tracking-wider text-on-surface-variant">System Uptime</p>
+</div>
+</div>
+<div class="mt-8 h-24 w-full bg-surface-container-lowest rounded overflow-hidden relative">
+<div class="absolute inset-0 opacity-40">
+<svg class="w-full h-full stroke-primary fill-none stroke-[2]" viewbox="0 0 400 100">
+<path d="M0,50 Q50,20 100,50 T200,50 T300,80 T400,20"></path>
+</svg>
+</div>
+<div class="absolute bottom-2 left-3 flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[10px] font-mono text-primary">LIVE NETWORK FLOW</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SOFTWARE MODULES GRID -->
+<section class="py-24 px-8 md:px-16 bg-[#161B22]">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<div class="text-primary font-label text-[10px] font-bold tracking-[0.2em] uppercase mb-4">SOFTWARE PLATFORM</div>
+<h2 class="text-4xl font-headline font-extrabold text-on-surface">Five Modules. One Unified Platform.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="module-card bg-[#1C2330] p-8 rounded-lg group transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-3xl mb-6">dynamic_form</span>
+<h4 class="text-xl font-headline font-bold text-on-surface mb-3">LCCS</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Local Cell Control System for high-density robotic coordination and collision avoidance.</p>
+<a class="text-primary text-xs font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Explore Module <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Card 2 -->
+<div class="module-card bg-[#1C2330] p-8 rounded-lg group transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-3xl mb-6">route</span>
+<h4 class="text-xl font-headline font-bold text-on-surface mb-3">RSS</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Route Selection System utilizing AI-driven pathfinding for optimized fleet throughput.</p>
+<a class="text-primary text-xs font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Explore Module <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Card 3 -->
+<div class="module-card bg-[#1C2330] p-8 rounded-lg group transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-3xl mb-6">view_in_ar</span>
+<h4 class="text-xl font-headline font-bold text-on-surface mb-3">3D Digital Twin</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Real-time photorealistic visualization of your entire facility for remote monitoring.</p>
+<a class="text-primary text-xs font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Explore Module <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 max-w-5xl mx-auto">
+<!-- Card 4 -->
+<div class="module-card bg-[#1C2330] p-8 rounded-lg group transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-3xl mb-6">inventory_2</span>
+<h4 class="text-xl font-headline font-bold text-on-surface mb-3">WMS Gateway</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Advanced inventory synchronization layer that bridges robotics with legacy ERP data.</p>
+<a class="text-primary text-xs font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Explore Module <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Card 5 -->
+<div class="module-card bg-[#1C2330] p-8 rounded-lg group transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-3xl mb-6">hub</span>
+<h4 class="text-xl font-headline font-bold text-on-surface mb-3">WCS Hub</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Centralized Warehouse Control System for orchestrating mixed-brand robotic fleets.</p>
+<a class="text-primary text-xs font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Explore Module <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- INTEGRATION ARCHITECTURE -->
+<section class="py-24 px-8 md:px-16 bg-[#0D1117]">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<div class="text-primary font-label text-[10px] font-bold tracking-[0.2em] uppercase mb-4">INTEGRATION</div>
+<h2 class="text-4xl font-headline font-extrabold text-on-surface">Hardware-Agnostic. System-Agnostic.</h2>
+</div>
+<div class="relative py-12 px-8 bg-surface-container-low rounded-2xl border border-outline-variant/10 overflow-hidden">
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, #ffb68b 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10 items-stretch">
+<!-- Top Tier -->
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container border border-outline-variant/20 rounded-xl space-y-4 shadow-lg">
+<span class="text-[10px] font-black text-outline tracking-widest uppercase">External Interface</span>
+<div class="flex flex-wrap justify-center gap-3">
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface text-xs font-bold rounded">SAP / ERP</span>
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface text-xs font-bold rounded">Oracle WMS</span>
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface text-xs font-bold rounded">MES</span>
+</div>
+</div>
+<!-- Middle Tier -->
+<div class="flex flex-col items-center justify-center p-8 bg-secondary-container/10 border-2 border-primary/30 rounded-xl space-y-4 shadow-xl">
+<span class="text-[10px] font-black text-primary tracking-widest uppercase">RoboLyne Stack</span>
+<div class="flex flex-col gap-2 w-full">
+<div class="bg-primary text-on-primary-fixed text-center py-2 text-xs font-black uppercase rounded tracking-tighter">Unified API Layer</div>
+<div class="bg-surface-container-high text-on-surface text-center py-2 text-xs font-bold uppercase rounded border border-primary/20">Data Orchestrator</div>
+</div>
+<div class="flex gap-4 text-[10px] text-outline font-mono">
+<span>REST</span>
+<span>•</span>
+<span>MQTT</span>
+<span>•</span>
+<span>OPEN API</span>
+</div>
+</div>
+<!-- Bottom Tier -->
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container border border-outline-variant/20 rounded-xl space-y-4 shadow-lg">
+<span class="text-[10px] font-black text-outline tracking-widest uppercase">Operational Edge</span>
+<div class="flex flex-wrap justify-center gap-3">
+<span class="material-symbols-outlined text-outline">precision_manufacturing</span>
+<span class="material-symbols-outlined text-outline">conveyor_belt</span>
+<span class="material-symbols-outlined text-outline">forklift</span>
+<span class="material-symbols-outlined text-outline">sensors</span>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant">Fleet &amp; Hardware Control</span>
+</div>
+</div>
+<!-- Connectors (Desktop) -->
+<div class="hidden md:block absolute top-1/2 left-1/3 -translate-y-1/2 w-[3%] h-[2px] bg-outline-variant/50"></div>
+<div class="hidden md:block absolute top-1/2 left-[64%] -translate-y-1/2 w-[3%] h-[2px] bg-outline-variant/50"></div>
+</div>
+</div>
+</section>
+<!-- KEY CAPABILITIES -->
+<section class="py-24 px-8 md:px-16 bg-[#161B22]">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="p-8 bg-surface-container-low rounded-xl border border-outline-variant/5 hover:border-primary/20 transition-all">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-6">monitoring</span>
+<h5 class="text-on-surface font-headline font-bold mb-3">Real-Time Monitoring</h5>
+<p class="text-on-surface-variant text-sm leading-relaxed">Sub-millisecond tracking of every SKU and robotic unit across the map.</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl border border-outline-variant/5 hover:border-primary/20 transition-all">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-6">psychology</span>
+<h5 class="text-on-surface font-headline font-bold mb-3">AI Sequencing</h5>
+<p class="text-on-surface-variant text-sm leading-relaxed">Neural networks dynamically prioritize tasks based on outbound deadlines.</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl border border-outline-variant/5 hover:border-primary/20 transition-all">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-6">build</span>
+<h5 class="text-on-surface font-headline font-bold mb-3">Predictive Maintenance</h5>
+<p class="text-on-surface-variant text-sm leading-relaxed">Software-driven diagnostics to catch hardware wear before failures occur.</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl border border-outline-variant/5 hover:border-primary/20 transition-all">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-6">security</span>
+<h5 class="text-on-surface font-headline font-bold mb-3">Air-Gap Security</h5>
+<p class="text-on-surface-variant text-sm leading-relaxed">Enterprise-grade encryption and isolated local network architecture.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CASE STUDIES -->
+<section class="py-24 px-8 md:px-16 bg-[#0D1117]">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<div class="text-primary font-label text-[10px] font-bold tracking-[0.2em] uppercase mb-4">SUCCESS STORIES</div>
+<h2 class="text-4xl font-headline font-extrabold text-on-surface">Proven Performance</h2>
+</div>
+<a class="text-primary text-sm font-bold uppercase tracking-widest hover:underline pb-1" href="#">View All Cases</a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="group cursor-pointer">
+<div class="relative h-64 w-full mb-6 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-70" data-alt="high-angle shot of a futuristic dark warehouse with orange glowing light accents and autonomous mobile robots moving items" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5NWPHBSE2fX00ub3DaUQIJspzn5tFC3kAj-fzTT0k_uCX9weQ_eXgG9Fab4f9cP6BS4L2ssmw8WlInh1Tv8i9hspdvMHAecnBw7cGhk6I2R29VDrLVLng8DXWyZq0KUSBjmVburC7NRHJg-jT2svigXu7DWA9G1fpcygezkHd0Nfy-3gaUQUZkXVHdNfeZUiXj_YkLpBUlTa0HXfPs1T83XqJvMjDxuwmKNDc6i3jGToBZ2Dobs5_WPgUtkdl2wcn9nJAelJiUqA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+</div>
+<div class="space-y-3">
+<p class="text-primary font-mono text-xs">LOGISTICS GIANT / 2023</p>
+<h4 class="text-xl font-headline font-bold text-on-surface group-hover:text-primary transition-colors">Deadlock Reduction</h4>
+<p class="text-on-surface-variant text-sm line-clamp-2">Implementation of LCCS reduced robotic deadlocking by 94% in high-traffic zones.</p>
+<div class="pt-2">
+<span class="text-2xl font-headline font-black text-primary">94%</span>
+<span class="text-[10px] uppercase text-outline ml-2 tracking-widest">efficiency gain</span>
+</div>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="relative h-64 w-full mb-6 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-70" data-alt="close-up of a high-resolution tablet screen displaying a 3D digital twin of an automated production line in dark mode" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaku96qgHHnjHGjV3YQ6e5iJewLxcoYBRFGyCQ2GHJrzfynZ0feSlaCQ-4GYR_HetThcXIarlAjzXMj3So9EyML8PsHEO8YbTd2_59GLtsA8djfwWkCyC3HCeAlKLlP8n_RsREt_Ssj0qc3-EgxdAZ8YIQ4O-ENg1fo9ZH3vxZ9FZVp3exAVXQyJTSa5Sqz110eDt0UmFxZtHQ0jadSYAbdgKE6HM-MtrZ41E33bTBi3QFJbe0K655w2rGmtt0kda8YVKaPdf1IOc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+</div>
+<div class="space-y-3">
+<p class="text-primary font-mono text-xs">E-COMMERCE HUB / 2024</p>
+<h4 class="text-xl font-headline font-bold text-on-surface group-hover:text-primary transition-colors">Digital Twin Precision</h4>
+<p class="text-on-surface-variant text-sm line-clamp-2">Real-time simulation enabled remote troubleshooting, cutting downtime by 60%.</p>
+<div class="pt-2">
+<span class="text-2xl font-headline font-black text-primary">60%</span>
+<span class="text-[10px] uppercase text-outline ml-2 tracking-widest">less downtime</span>
+</div>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="relative h-64 w-full mb-6 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-70" data-alt="complex analytical dashboard on multiple monitors with orange and teal data visualizations in a dim room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtEY7yRm51j6zt4fFBeGppo_fP5ViVxDfYIZm9XWdcv074ZaWKhHIwAUYl8-ZYMbufNQMVq0WAsG3_2pfB3iVgveGrQcoK9CI0d9gZfLH0WOnqqg83qoUHQxGlK-0cOR5I4AoguSZRnljSHiNcsMvCaDLwSzHcB0hzjDTvSz-E2k95Ha3CxPCWhhMk47MaAxuLSlc6T1ohfUxu9XJ64CPSgR3QpSAzJXbeOqolKwy7dmQiDylKQ71sKhg3BHrr3P2ZTzSxyD78O2s"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+</div>
+<div class="space-y-3">
+<p class="text-primary font-mono text-xs">GLOBAL RETAILER / 2024</p>
+<h4 class="text-xl font-headline font-bold text-on-surface group-hover:text-primary transition-colors">Omnichannel Sync</h4>
+<p class="text-on-surface-variant text-sm line-clamp-2">WMS Gateway synchronized 40,000+ hourly SKUs with zero inventory drift.</p>
+<div class="pt-2">
+<span class="text-2xl font-headline font-black text-primary">0%</span>
+<span class="text-[10px] uppercase text-outline ml-2 tracking-widest">inventory drift</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FINAL CTA -->
+<section class="py-24 px-8 md:px-16">
+<div class="max-w-4xl mx-auto text-center space-y-10 relative overflow-hidden p-16 rounded-3xl bg-surface-container-low border border-outline-variant/10">
+<div class="absolute -top-24 -left-24 w-64 h-64 bg-primary/10 blur-[80px]"></div>
+<div class="absolute -bottom-24 -right-24 w-64 h-64 bg-tertiary/10 blur-[80px]"></div>
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold text-on-surface leading-tight relative z-10">
+                    Ready to evolve your warehouse operations?
+                </h2>
+<p class="text-on-surface-variant text-lg max-w-2xl mx-auto relative z-10">
+                    Join 50+ industry leaders who have unified their automation strategy with the RoboLyne Software Stack.
+                </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
+<button class="machined-gradient text-on-primary-fixed px-10 py-5 rounded-lg font-bold font-headline transition-transform active:scale-95 shadow-xl">
+                        Book a Live Demo
+                    </button>
+<button class="border border-outline text-on-surface px-10 py-5 rounded-lg font-bold font-headline hover:bg-surface-container-high transition-colors">
+                        Download Full Software Spec
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0a0d10] w-full py-12 px-8 border-t border-[#31353c]/20">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div>
+<div class="text-lg font-black text-[#dfe2eb] font-headline uppercase mb-4 tracking-tighter">RoboLyne</div>
+<p class="text-[#9ca3af] font-body text-sm max-w-sm mb-6">Advancing industrial automation through kinetic architecture and software precision.</p>
+<p class="text-[#9ca3af] font-body text-xs uppercase tracking-widest">© 2024 RoboLyne Industrial Automation. All rights reserved.</p>
+</div>
+<div class="flex flex-col md:items-end gap-6">
+<div class="flex flex-wrap gap-8">
+<a class="text-[#9ca3af] hover:text-[#ffb68b] transition-colors font-body text-sm uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="text-[#9ca3af] hover:text-[#ffb68b] transition-colors font-body text-sm uppercase tracking-widest" href="#">Terms of Service</a>
+<a class="text-[#9ca3af] hover:text-[#ffb68b] transition-colors font-body text-sm uppercase tracking-widest" href="#">Documentation</a>
+<a class="text-[#9ca3af] hover:text-[#ffb68b] transition-colors font-body text-sm uppercase tracking-widest" href="#">Support</a>
+</div>
+<div class="flex gap-4">
+<span class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors cursor-pointer">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</span>
+<span class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors cursor-pointer">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

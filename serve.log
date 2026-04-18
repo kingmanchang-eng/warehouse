@@ -1,0 +1,57 @@
+ INFO  Accepting connections at http://localhost:4000
+ HTTP  2026/4/17 16:23:13 ::1 GET /index.html
+ HTTP  2026/4/17 16:23:13 ::1 Returned 301 in 96 ms
+ HTTP  2026/4/17 16:23:45 ::1 GET /
+ HTTP  2026/4/17 16:23:45 ::1 Returned 200 in 7 ms
+ HTTP  2026/4/17 16:24:10 ::1 GET /
+ HTTP  2026/4/17 16:24:10 ::1 Returned 200 in 5 ms
+ HTTP  2026/4/17 16:24:13 ::1 GET /favicon.ico
+ HTTP  2026/4/17 16:24:13 ::1 Returned 404 in 2 ms
+ HTTP  2026/4/17 16:27:29 ::1 GET /
+ HTTP  2026/4/17 16:27:29 ::1 Returned 200 in 2 ms
+ HTTP  2026/4/17 16:27:32 ::1 GET /
+ HTTP  2026/4/17 16:27:32 ::1 Returned 304 in 1 ms
+ HTTP  2026/4/17 16:27:34 ::1 GET /products.html
+ HTTP  2026/4/17 16:27:34 ::1 Returned 301 in 0 ms
+ HTTP  2026/4/17 16:27:34 ::1 GET /products
+ HTTP  2026/4/17 16:27:34 ::1 Returned 200 in 2 ms
+ HTTP  2026/4/17 16:27:49 ::1 GET /products
+ HTTP  2026/4/17 16:27:49 ::1 Returned 304 in 2 ms
+ HTTP  2026/4/17 16:27:59 ::1 GET /solutions-asrs.html
+ HTTP  2026/4/17 16:27:59 ::1 Returned 301 in 1 ms
+ HTTP  2026/4/17 16:27:59 ::1 GET /solutions-asrs
+ HTTP  2026/4/17 16:27:59 ::1 Returned 200 in 2 ms
+ HTTP  2026/4/17 16:28:14 ::1 GET /case-studies.html
+ HTTP  2026/4/17 16:28:14 ::1 Returned 301 in 1 ms
+ HTTP  2026/4/17 16:28:14 ::1 GET /case-studies
+ HTTP  2026/4/17 16:28:14 ::1 Returned 200 in 2 ms
+ HTTP  2026/4/17 16:28:32 ::1 GET /case-studies
+ HTTP  2026/4/17 16:28:32 ::1 Returned 304 in 1 ms
+ HTTP  2026/4/17 16:28:44 ::1 GET /case-studies
+ HTTP  2026/4/17 16:28:44 ::1 Returned 304 in 1 ms
+ HTTP  2026/4/17 16:28:53 ::1 GET /
+ HTTP  2026/4/17 16:28:53 ::1 Returned 304 in 1 ms
+ HTTP  2026/4/17 16:28:58 ::1 GET /solutions-asrs
+ HTTP  2026/4/17 16:28:58 ::1 Returned 304 in 1 ms
+ HTTP  2026/4/17 16:28:59 ::1 GET /case-studies
+ HTTP  2026/4/17 16:28:59 ::1 Returned 304 in 0 ms
+ HTTP  2026/4/17 16:39:19 ::1 GET /
+ HTTP  2026/4/17 16:39:19 ::1 Returned 304 in 1 ms
+ HTTP  2026/4/17 16:40:27 ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2026/4/17 16:40:27 ::1 Returned 404 in 1 ms
+ HTTP  2026/4/17 16:54:34 ::1 GET /
+ HTTP  2026/4/17 16:54:34 ::1 Returned 200 in 2 ms
+ HTTP  2026/4/17 16:54:46 ::1 GET /
+ HTTP  2026/4/17 16:54:46 ::1 Returned 200 in 1 ms
+ HTTP  2026/4/17 16:55:41 ::1 GET /
+ HTTP  2026/4/17 16:55:41 ::1 Returned 200 in 1 ms
+ HTTP  2026/4/17 16:56:00 ::1 GET /
+ HTTP  2026/4/17 16:56:00 ::1 Returned 304 in 1 ms
+ HTTP  2026/4/17 16:56:02 ::1 GET /products
+ HTTP  2026/4/17 16:56:02 ::1 Returned 200 in 2 ms
+ HTTP  2026/4/17 16:56:08 ::1 GET /solutions-asrs
+ HTTP  2026/4/17 16:56:08 ::1 Returned 304 in 2 ms
+ HTTP  2026/4/17 16:56:12 ::1 GET /case-studies
+ HTTP  2026/4/17 16:56:12 ::1 Returned 304 in 1 ms
+ HTTP  2026/4/17 16:56:32 ::1 GET /
+ HTTP  2026/4/17 16:56:32 ::1 Returned 304 in 1 ms

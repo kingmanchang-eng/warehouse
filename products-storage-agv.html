@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Storage AGV | RoboLyne</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#003854",
+                        "primary-fixed-dim": "#ffb68b",
+                        "surface-tint": "#ffb68b",
+                        "secondary-container": "#424958",
+                        "on-surface": "#dfe2eb",
+                        "primary": "#ffb68b",
+                        "on-secondary-fixed": "#151c28",
+                        "surface-container-highest": "#31353c",
+                        "outline-variant": "#574237",
+                        "tertiary-container": "#00a6ef",
+                        "on-tertiary": "#00344e",
+                        "inverse-surface": "#dfe2eb",
+                        "surface-bright": "#353940",
+                        "on-error": "#690005",
+                        "surface-variant": "#31353c",
+                        "surface-container": "#1c2026",
+                        "secondary-fixed-dim": "#c0c6d8",
+                        "on-tertiary-fixed-variant": "#004b6f",
+                        "error": "#ffb4ab",
+                        "on-primary-container": "#582600",
+                        "surface-dim": "#10141a",
+                        "on-secondary-container": "#b2b8ca",
+                        "surface-container-lowest": "#0a0e14",
+                        "on-secondary": "#2a313e",
+                        "primary-container": "#f47b20",
+                        "on-primary-fixed-variant": "#753400",
+                        "outline": "#a68b7d",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#cae6ff",
+                        "on-surface-variant": "#dec1b1",
+                        "inverse-on-surface": "#2d3137",
+                        "on-secondary-fixed-variant": "#404755",
+                        "background": "#10141a",
+                        "on-primary": "#522300",
+                        "inverse-primary": "#994700",
+                        "on-error-container": "#ffdad6",
+                        "secondary": "#c0c6d8",
+                        "on-tertiary-fixed": "#001e2f",
+                        "surface-container-low": "#181c22",
+                        "on-primary-fixed": "#321200",
+                        "secondary-fixed": "#dce2f4",
+                        "primary-fixed": "#ffdbc8",
+                        "tertiary-fixed-dim": "#8ccdff",
+                        "surface-container-high": "#262a31",
+                        "surface": "#10141a",
+                        "tertiary": "#8ccdff",
+                        "on-background": "#dfe2eb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased flex">
+<!-- SideNavBar (from JSON) -->
+<nav class="fixed top-0 w-full z-50 bg-[#1c2026]/80 backdrop-blur-md shadow-2xl shadow-black/40">
+<div class="flex justify-between items-center max-w-screen-2xl mx-auto px-8 h-20">
+<a href="index.html" class="text-2xl font-bold tracking-tighter text-[#f47b20]">RoboLyne</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="index.html">Home</a>
+<div class="group relative">
+<a href="products.html" class="text-[#f47b20] border-b-2 border-[#f47b20] pb-1 font-medium transition-colors duration-200 flex items-center gap-1"> Products <span class="material-symbols-outlined text-sm" style="transition:transform 0.2s;display:inline-block">expand_more</span></a>
+<div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="min-width:220px">
+<div class="bg-[#1c2026] rounded-xl shadow-[0_24px_48px_rgba(0,0,0,0.5)] border border-[#574237]/30 overflow-hidden">
+<div class="px-4 py-2 border-b border-[#574237]/20">
+<span class="text-[10px] font-bold uppercase tracking-widest text-[#f47b20]">Hardware</span>
+</div>
+<a href="products-agv-forklift.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">forklift</span>AGV Forklift</a>
+<a href="products-agv-roller.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">conveyor_belt</span>AGV Roller</a>
+<a href="products-storage-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">inventory_2</span>Storage AGV</a>
+<a href="products-lifting-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">lift</span>Lifting AGV</a>
+<a href="products-composite-robot.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors border-b border-[#574237]/20">
+<span class="material-symbols-outlined text-[#f47b20] text-base">precision_manufacturing</span>Composite Mobile Robot</a>
+<a href="products.html" class="flex items-center justify-between px-4 py-3 text-xs font-bold text-[#f47b20] hover:bg-[#262a31] transition-colors">
+All Products <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+<div class="group relative">
+<a href="solutions-asrs.html" class="text-slate-400 font-medium hover:text-white transition-colors duration-200 flex items-center gap-1"> Solutions <span class="material-symbols-outlined text-sm">expand_more</span></a>
+<div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="min-width:220px">
+<div class="bg-[#1c2026] rounded-xl shadow-[0_24px_48px_rgba(0,0,0,0.5)] border border-[#574237]/30 overflow-hidden">
+<div class="px-4 py-2 border-b border-[#574237]/20">
+<span class="text-[10px] font-bold uppercase tracking-widest text-[#f47b20]">By Application</span>
+</div>
+<a href="solutions-asrs.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">shelves</span>ASRS Systems</a>
+<a href="solutions-picking.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">package_2</span>Picking Solutions</a>
+<a href="solutions-material.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">move_item</span>Material Handling</a>
+<a href="solutions-agv.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors">
+<span class="material-symbols-outlined text-[#f47b20] text-base">smart_toy</span>Specialized AGV</a>
+<a href="solutions-software.html" class="flex items-center gap-3 px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-[#262a31] transition-colors border-b border-[#574237]/20">
+<span class="material-symbols-outlined text-[#f47b20] text-base">dashboard</span>Control Software</a>
+<a href="case-studies.html" class="flex items-center justify-between px-4 py-3 text-xs font-bold text-[#f47b20] hover:bg-[#262a31] transition-colors">
+View Case Studies <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="case-studies.html">Case Studies</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="about.html">About</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="contact.html">Contact</a>
+</div>
+<a href="contact.html" class="primary-gradient text-on-primary-container px-6 py-3 rounded-xl font-bold text-sm hover:brightness-110 active:scale-95 transition-all duration-200 shadow-lg shadow-primary-container/20"> Get a Quote </a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 w-full min-h-screen overflow-y-auto bg-surface">
+<!-- TopNavBar (from JSON - Mobile Only) -->
+<nav class="md:hidden flex justify-between items-center w-full px-6 py-4 max-w-full bg-[#10141a]/80 backdrop-blur-md sticky top-0 z-50">
+<div class="text-xl font-black italic text-primary font-headline tracking-tight">RoboLyne</div>
+<div class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined">notifications</span>
+<span class="material-symbols-outlined">settings</span>
+<img alt="Operator Profile" class="w-8 h-8 rounded-full border border-surface-container" data-alt="close up of metallic industrial robot arm joint with orange accents in dark warehouse" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6OsbNY-9ZS59OQ1PBvygB2ZD8-nIxeXf3XwbUsH4GcfX3Q2VJr_ur1g44wadQK3kXjn8emylW1lViFe30x3BijYAICgc6PnU0vOTVCRbcuk6CKsQ6orU0Kn39LYYzH6p9-mwIOv0U0zPkJk0X8enSJoj11aVuhbav3RHTo0a0BbifdWzOlxZhnNggpmx3oFsUYyKkSO7nvYK45bq0ZEKMsCbYyUe1PrYdt_1N7wVz0aCYmZHicBfrvGE_60VDKRildrzkSIlbsAA"/>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-[716px] flex flex-col justify-end px-6 md:px-12 py-20 bg-surface-container-lowest">
+<div class="absolute inset-0 z-0">
+<img alt="Storage AGV Hero" class="w-full h-full object-cover opacity-30" data-alt="automated high density warehouse storage system with tall orange racking and automated guided vehicles in dark setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnd_g8M0PLzqoFPbs5G03-gEfYsDa20yhRmF55Tlya2Pg1te3_LGU8FYHz_VMJjgTmecxJmazyUBWQe2uBNqPRPfT0JLMPBnfbHX-udy_MaGWdOfW2t9RnwV-VbcMBO0hzlxvw7r8uHqZKEIshCO6V5uwD_ZNHWnb8zNoT-FM7kbQCaLEPgHmDYSc7LhCGqNc3H93H2Okq91trZI48hBEVA9rH1utv6Q6gph8IyZGsyA7wPrbtIU6378YFGjk9uBu58YVRI74LM0Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-4xl">
+<span class="inline-flex px-3 py-1 bg-surface-container-highest text-secondary text-[10px] font-label uppercase tracking-widest mb-6">Storage AGV</span>
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-on-surface mb-6">Storage AGV</h1>
+<p class="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed mb-10">
+                    Compact unit for dense bin and shelf storage, optimized for ASRS with sub-15mm positioning accuracy.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-6 py-3 rounded-sm bg-gradient-to-br from-primary to-primary-container text-on-primary font-label text-sm font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                        Request a Demo
+                    </button>
+<button class="px-6 py-3 rounded-sm border border-outline-variant/50 text-primary font-label text-sm font-semibold uppercase tracking-wider hover:bg-surface-container transition-colors">
+                        Download Spec Sheet
+                    </button>
+</div>
+</div>
+</section>
+<!-- Specs Bar -->
+<div class="bg-surface-container-low border-b border-surface-container/50 px-6 md:px-12 py-6">
+<div class="flex flex-wrap justify-center gap-x-12 gap-y-4 text-sm font-label uppercase tracking-wider text-on-surface-variant">
+<div class="flex items-center gap-2"><span class="text-primary material-symbols-outlined text-[16px]">weight</span> Max Load: 500 kg</div>
+<div class="flex items-center gap-2"><span class="text-primary material-symbols-outlined text-[16px]">my_location</span> Accuracy: ±10mm</div>
+<div class="flex items-center gap-2"><span class="text-primary material-symbols-outlined text-[16px]">radar</span> Nav: QR + Laser</div>
+<div class="flex items-center gap-2"><span class="text-primary material-symbols-outlined text-[16px]">height</span> Height: Up to 10m</div>
+<div class="flex items-center gap-2"><span class="text-primary material-symbols-outlined text-[16px]">aspect_ratio</span> Compact Body: 800×600mm</div>
+</div>
+</div>
+<!-- Overview Section (Bento Grid) -->
+<section class="px-6 md:px-12 py-24 bg-surface">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-7xl mx-auto">
+<!-- Left: Technical Specs Table -->
+<div class="lg:col-span-5 bg-surface-container rounded-sm p-8 flex flex-col gap-6">
+<h3 class="font-headline text-2xl font-semibold tracking-tight text-on-surface">Technical Specifications</h3>
+<div class="flex flex-col gap-0 border border-surface-container-high rounded-sm">
+<div class="flex justify-between py-3 px-4 bg-surface-container-highest/30 border-b border-surface-container-high">
+<span class="font-body text-sm text-on-surface-variant">Model</span>
+<span class="font-body text-sm text-on-surface font-medium">RBL-ST500</span>
+</div>
+<div class="flex justify-between py-3 px-4 border-b border-surface-container-high">
+<span class="font-body text-sm text-on-surface-variant">Load Capacity</span>
+<span class="font-body text-sm text-on-surface font-medium">500kg</span>
+</div>
+<div class="flex justify-between py-3 px-4 bg-surface-container-highest/30 border-b border-surface-container-high">
+<span class="font-body text-sm text-on-surface-variant">Positioning Accuracy</span>
+<span class="font-body text-sm text-on-surface font-medium">±10mm</span>
+</div>
+<div class="flex justify-between py-3 px-4 border-b border-surface-container-high">
+<span class="font-body text-sm text-on-surface-variant">Max Lift Height</span>
+<span class="font-body text-sm text-on-surface font-medium">10,000mm</span>
+</div>
+<div class="flex justify-between py-3 px-4 bg-surface-container-highest/30 border-b border-surface-container-high">
+<span class="font-body text-sm text-on-surface-variant">Navigation</span>
+<span class="font-body text-sm text-on-surface font-medium">QR + Laser Hybrid</span>
+</div>
+<div class="flex justify-between py-3 px-4 border-b border-surface-container-high">
+<span class="font-body text-sm text-on-surface-variant">Battery</span>
+<span class="font-body text-sm text-on-surface font-medium">24V 80Ah Li-ion</span>
+</div>
+<div class="flex justify-between py-3 px-4 bg-surface-container-highest/30 border-b border-surface-container-high">
+<span class="font-body text-sm text-on-surface-variant">IP Rating</span>
+<span class="font-body text-sm text-on-surface font-medium">IP54</span>
+</div>
+<div class="flex justify-between py-3 px-4">
+<span class="font-body text-sm text-on-surface-variant">Connectivity</span>
+<span class="font-body text-sm text-on-surface font-medium">WiFi 6</span>
+</div>
+</div>
+</div>
+<!-- Right: Text & Image -->
+<div class="lg:col-span-7 flex flex-col gap-8">
+<div class="bg-surface-container-low p-8 md:p-12 h-full rounded-sm flex flex-col justify-center relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-headline text-3xl md:text-4xl font-bold tracking-tight text-on-surface mb-6">Optimized for High-Density Storage</h2>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed">
+                                The RBL-ST500 is engineered specifically for automated storage and retrieval systems (ASRS). Its ultra-compact chassis and specialized lifting mast allow it to operate in aisles as narrow as 1.2 meters, maximizing warehouse cube utilization. Hybrid navigation ensures flawless operation between dense racking structures where laser lines-of-sight are frequently obstructed.
+                            </p>
+</div>
+<div class="absolute right-[-10%] bottom-[-10%] opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[300px]">inventory_2</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body></html>
