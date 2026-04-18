@@ -7,7 +7,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
@@ -16,59 +16,59 @@
             theme: {
                 extend: {
                     "colors": {
-                        "on-tertiary-container": "#003854",
-                        "primary-fixed-dim": "#ffb68b",
-                        "surface-tint": "#ffb68b",
-                        "secondary-container": "#424958",
-                        "on-surface": "#dfe2eb",
-                        "primary": "#ffb68b",
-                        "on-secondary-fixed": "#151c28",
-                        "surface-container-highest": "#31353c",
-                        "outline-variant": "#574237",
                         "tertiary-container": "#00a6ef",
-                        "on-tertiary": "#00344e",
+                        "on-secondary-fixed-variant": "#6b3a19",
                         "inverse-surface": "#dfe2eb",
-                        "surface-bright": "#353940",
-                        "on-error": "#690005",
-                        "surface-variant": "#31353c",
-                        "surface-container": "#1c2026",
-                        "secondary-fixed-dim": "#c0c6d8",
-                        "on-tertiary-fixed-variant": "#004b6f",
-                        "error": "#ffb4ab",
-                        "on-primary-container": "#582600",
-                        "surface-dim": "#10141a",
-                        "on-secondary-container": "#b2b8ca",
-                        "surface-container-lowest": "#0a0e14",
-                        "on-secondary": "#2a313e",
-                        "primary-container": "#f47b20",
                         "on-primary-fixed-variant": "#753400",
-                        "outline": "#a68b7d",
-                        "error-container": "#93000a",
-                        "tertiary-fixed": "#cae6ff",
-                        "on-surface-variant": "#dec1b1",
-                        "inverse-on-surface": "#2d3137",
-                        "on-secondary-fixed-variant": "#404755",
-                        "background": "#10141a",
+                        "secondary-fixed-dim": "#ffb68b",
                         "on-primary": "#522300",
-                        "inverse-primary": "#994700",
-                        "on-error-container": "#ffdad6",
-                        "secondary": "#c0c6d8",
+                        "primary-fixed-dim": "#ffb68b",
+                        "on-primary-container": "#582600",
+                        "tertiary-fixed": "#cae6ff",
+                        "primary-container": "#f47b20",
+                        "error-container": "#93000a",
                         "on-tertiary-fixed": "#001e2f",
-                        "surface-container-low": "#181c22",
-                        "on-primary-fixed": "#321200",
-                        "secondary-fixed": "#dce2f4",
+                        "on-tertiary-fixed-variant": "#004b6f",
+                        "surface-variant": "#31353c",
+                        "inverse-on-surface": "#2d3137",
+                        "surface-dim": "#10141a",
+                        "surface-container": "#1c2026",
+                        "on-background": "#dfe2eb",
+                        "surface-bright": "#353940",
+                        "surface-container-highest": "#31353c",
+                        "on-surface": "#dfe2eb",
+                        "tertiary": "#8ccdff",
+                        "inverse-primary": "#994700",
+                        "on-tertiary-container": "#003854",
                         "primary-fixed": "#ffdbc8",
+                        "on-surface-variant": "#dec1b1",
+                        "error": "#ffb4ab",
+                        "background": "#10141a",
+                        "on-tertiary": "#00344e",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0a0e14",
+                        "outline-variant": "#574237",
+                        "secondary-container": "#6e3c1b",
+                        "secondary": "#ffb68b",
+                        "surface-container-low": "#181c22",
+                        "on-secondary": "#502405",
                         "tertiary-fixed-dim": "#8ccdff",
                         "surface-container-high": "#262a31",
                         "surface": "#10141a",
-                        "tertiary": "#8ccdff",
-                        "on-background": "#dfe2eb"
+                        "on-secondary-container": "#efa87e",
+                        "secondary-fixed": "#ffdbc8",
+                        "primary": "#ffb68b",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#ffb68b",
+                        "outline": "#a68b7d",
+                        "on-secondary-fixed": "#321200",
+                        "on-primary-fixed": "#321200"
                     },
                     "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
                     },
                     "fontFamily": {
                         "headline": ["Plus Jakarta Sans", "sans-serif"],
@@ -80,13 +80,13 @@
         }
     </script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); font-family: theme('fontFamily.body'); }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: theme('fontFamily.headline'); }
+        .glass-panel { background-color: rgba(28, 32, 38, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
     </style>
 </head>
-<body class="bg-surface text-on-surface font-body antialiased flex">
-<!-- SideNavBar (from JSON) -->
+<body class="antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-[#1c2026]/80 backdrop-blur-md shadow-2xl shadow-black/40">
 <div class="flex justify-between items-center max-w-screen-2xl mx-auto px-8 h-20">
 <a href="index.html" class="text-2xl font-bold tracking-tighter text-[#f47b20]">RoboLyne</a>
@@ -131,107 +131,274 @@
 <a style="background:linear-gradient(135deg,#ffb68b 0%,#f47b20 100%)" class="text-[#522300] px-6 py-3 rounded-xl font-bold text-sm hover:brightness-110 active:scale-95 transition-all duration-200 shadow-lg" href="#" onclick="openQuoteModal(event)"> Get a Quote </a>
 </div>
 </nav>
-<!-- Main Content -->
-<main class="flex-1 w-full min-h-screen overflow-y-auto bg-surface">
-<!-- TopNavBar (from JSON - Mobile Only) -->
-<nav class="md:hidden flex justify-between items-center w-full px-6 py-4 max-w-full bg-[#10141a]/80 backdrop-blur-md sticky top-0 z-50">
-<div class="text-xl font-black italic text-primary font-headline tracking-tight">RoboLyne</div>
-<div class="flex items-center gap-4 text-on-surface">
-<span class="material-symbols-outlined">notifications</span>
-<span class="material-symbols-outlined">settings</span>
-<img alt="Operator Profile" class="w-8 h-8 rounded-full border border-surface-container" data-alt="close up of metallic industrial robot arm joint with orange accents in dark warehouse" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6OsbNY-9ZS59OQ1PBvygB2ZD8-nIxeXf3XwbUsH4GcfX3Q2VJr_ur1g44wadQK3kXjn8emylW1lViFe30x3BijYAICgc6PnU0vOTVCRbcuk6CKsQ6orU0Kn39LYYzH6p9-mwIOv0U0zPkJk0X8enSJoj11aVuhbav3RHTo0a0BbifdWzOlxZhnNggpmx3oFsUYyKkSO7nvYK45bq0ZEKMsCbYyUe1PrYdt_1N7wVz0aCYmZHicBfrvGE_60VDKRildrzkSIlbsAA"/>
-</div>
-</nav>
+<main class="flex-grow">
 <!-- Hero Section -->
-<section class="relative min-h-[716px] flex flex-col justify-end px-6 md:px-12 py-20 bg-surface-container-lowest">
-<div class="absolute inset-0 z-0">
-<img alt="Storage AGV Hero" class="w-full h-full object-cover opacity-30" data-alt="automated high density warehouse storage system with tall orange racking and automated guided vehicles in dark setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnd_g8M0PLzqoFPbs5G03-gEfYsDa20yhRmF55Tlya2Pg1te3_LGU8FYHz_VMJjgTmecxJmazyUBWQe2uBNqPRPfT0JLMPBnfbHX-udy_MaGWdOfW2t9RnwV-VbcMBO0hzlxvw7r8uHqZKEIshCO6V5uwD_ZNHWnb8zNoT-FM7kbQCaLEPgHmDYSc7LhCGqNc3H93H2Okq91trZI48hBEVA9rH1utv6Q6gph8IyZGsyA7wPrbtIU6378YFGjk9uBu58YVRI74LM0Q"/>
-<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/80 to-transparent"></div>
+<section class="relative pt-24 pb-32 px-8 overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-20">
+<img alt="Industrial warehouse interior with metallic structures and dim lighting" class="w-full h-full object-cover" data-alt="Industrial warehouse interior with metallic structures, high racks, and dim atmospheric lighting creating a moody B2B environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKL9wZmWF3jNCv2_9a3lvWcbIgdpuszdb9ZqNkxWAVZhBZljBJjGm5K6PICq3EWPHG1vEpMN5aWdVgE0y2VdwD02iwSMCcvyqu-hwfNmCmz6nPNtITnPBBGy6dWEqNrDN0xCv87Aun5UYVWbonH6_OqdPrr03F1KL4uleLjKn_avefkf586DcWefbUwrJ_MFkcBJFcjVKxnvnrgvDACgUWTPWnmUViyyVsqcRTjwkahO0OBM8x4ZeTUktX-wbSK25sRhcccAkgYdk"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent"></div>
 </div>
-<div class="relative z-10 max-w-4xl">
-<span class="inline-flex px-3 py-1 bg-surface-container-highest text-secondary text-[10px] font-label uppercase tracking-widest mb-6">Storage AGV</span>
-<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-on-surface mb-6">Storage AGV</h1>
-<p class="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed mb-10">
-                    Compact unit for dense bin and shelf storage, optimized for ASRS with sub-15mm positioning accuracy.
-                </p>
-<div class="flex flex-wrap gap-4">
-<button class="px-6 py-3 rounded-sm bg-gradient-to-br from-primary to-primary-container text-on-primary font-label text-sm font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity" onclick="openQuoteModal(event)">
-                        Request a Demo
-                    </button>
-<button class="px-6 py-3 rounded-sm border border-outline-variant/50 text-primary font-label text-sm font-semibold uppercase tracking-wider hover:bg-surface-container transition-colors">
-                        Download Spec Sheet
-                    </button>
+<div class="max-w-screen-2xl mx-auto relative z-10">
+<div class="max-w-3xl">
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-on-background">Storage AGV</h1>
+<p class="text-xl md:text-2xl text-slate-400 mb-10 font-body max-w-2xl">High-Density Automated Storage for Modern Warehouses.</p>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-headline font-bold text-lg px-8 py-4 rounded-xl hover:brightness-110 transition-all duration-200 flex items-center gap-2 mb-16" onclick="openQuoteModal(event)">
+                        Request a Free Assessment
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container/60 backdrop-blur-md p-6 rounded-xl border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary mb-3 text-3xl" data-icon="weight">weight</span>
+<p class="font-label text-xs text-slate-400 tracking-wider mb-1">CAPACITY</p>
+<p class="font-headline text-2xl font-bold text-on-surface">Max Load 1000kg</p>
+</div>
+<div class="bg-surface-container/60 backdrop-blur-md p-6 rounded-xl border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary mb-3 text-3xl" data-icon="speed">speed</span>
+<p class="font-label text-xs text-slate-400 tracking-wider mb-1">PERFORMANCE</p>
+<p class="font-headline text-2xl font-bold text-on-surface">Speed 1.5m/s</p>
+</div>
+<div class="bg-surface-container/60 backdrop-blur-md p-6 rounded-xl border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary mb-3 text-3xl" data-icon="radar">radar</span>
+<p class="font-label text-xs text-slate-400 tracking-wider mb-1">TECHNOLOGY</p>
+<p class="font-headline text-2xl font-bold text-on-surface">Laser+Vision</p>
+</div>
+</div>
 </div>
 </div>
 </section>
-<!-- Specs Bar -->
-<div class="bg-surface-container-low border-b border-surface-container/50 px-6 md:px-12 py-6">
-<div class="flex flex-wrap justify-center gap-x-12 gap-y-4 text-sm font-label uppercase tracking-wider text-on-surface-variant">
-<div class="flex items-center gap-2"><span class="text-primary material-symbols-outlined text-[16px]">weight</span> Max Load: 500 kg</div>
-<div class="flex items-center gap-2"><span class="text-primary material-symbols-outlined text-[16px]">my_location</span> Accuracy: ±10mm</div>
-<div class="flex items-center gap-2"><span class="text-primary material-symbols-outlined text-[16px]">radar</span> Nav: QR + Laser</div>
-<div class="flex items-center gap-2"><span class="text-primary material-symbols-outlined text-[16px]">height</span> Height: Up to 10m</div>
-<div class="flex items-center gap-2"><span class="text-primary material-symbols-outlined text-[16px]">aspect_ratio</span> Compact Body: 800×600mm</div>
+<!-- Product Overview -->
+<section class="py-24 px-8 bg-surface-container-low">
+<div class="max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative rounded-xl overflow-hidden bg-surface-container p-2 border border-outline-variant/30 group">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<img alt="High-tech automated guided vehicle robot in a dark industrial setting" class="w-full h-auto object-cover rounded-lg aspect-video" data-alt="Close up of a sleek, heavy-duty industrial automated guided vehicle (AGV) robot in a dark moody warehouse setting with orange glowing accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_-QdTmkY_bfPl_hUbh4wPojjUk5HQMuYpuv0BzriZlYOReJMXWIFDT3Q_3Nk3irpH3BhCY3t4DlVCBiCgqbB-r-eXAXk299jCIHpsOVjQnNbzY1GJL52Uro_Y2oYT3Ea5w6tMjVrHoI2YqBovC469DUYUfJYGDuUVCSJ5AEtX22DZ_OUT8vLblpOoVG7tcNybDbXK2c_khD4oqjuzzQVKSVjAOTGnNGSqU5P-Sr2M_kmZSoNW2_jHZb1qDBXPIPFkrQ8kgsznkCI"/>
 </div>
+<div>
+<h2 class="font-headline text-3xl md:text-4xl font-bold mb-6 text-on-surface">Precision Engineered for Density</h2>
+<p class="text-slate-400 font-body mb-10 text-lg leading-relaxed">
+                            The Storage AGV redefines warehouse logistics with sub-centimeter accuracy and swarm intelligence. Designed to operate in high-density environments, it seamlessly integrates with existing shelving and software ecosystems to maximize throughput and minimize footprint.
+                        </p>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="check_circle" data-weight="fill">check_circle</span>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Multi-level shelving support</h4>
+<p class="text-sm text-slate-400 font-body mt-1">Adapts to complex racking architectures.</p>
 </div>
-<!-- Overview Section (Bento Grid) -->
-<section class="px-6 md:px-12 py-24 bg-surface">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-7xl mx-auto">
-<!-- Left: Technical Specs Table -->
-<div class="lg:col-span-5 bg-surface-container rounded-sm p-8 flex flex-col gap-6">
-<h3 class="font-headline text-2xl font-semibold tracking-tight text-on-surface">Technical Specifications</h3>
-<div class="flex flex-col gap-0 border border-surface-container-high rounded-sm">
-<div class="flex justify-between py-3 px-4 bg-surface-container-highest/30 border-b border-surface-container-high">
-<span class="font-body text-sm text-on-surface-variant">Model</span>
-<span class="font-body text-sm text-on-surface font-medium">RBL-ST500</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="check_circle" data-weight="fill">check_circle</span>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Swarm intelligence fleet management</h4>
+<p class="text-sm text-slate-400 font-body mt-1">Coordinate hundreds of units without bottlenecks.</p>
 </div>
-<div class="flex justify-between py-3 px-4 border-b border-surface-container-high">
-<span class="font-body text-sm text-on-surface-variant">Load Capacity</span>
-<span class="font-body text-sm text-on-surface font-medium">500kg</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="check_circle" data-weight="fill">check_circle</span>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Sub-centimeter positioning accuracy</h4>
+<p class="text-sm text-slate-400 font-body mt-1">Flawless alignment in tight corridors.</p>
 </div>
-<div class="flex justify-between py-3 px-4 bg-surface-container-highest/30 border-b border-surface-container-high">
-<span class="font-body text-sm text-on-surface-variant">Positioning Accuracy</span>
-<span class="font-body text-sm text-on-surface font-medium">±10mm</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="check_circle" data-weight="fill">check_circle</span>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Auto charging &amp; WMS/ERP Integration</h4>
+<p class="text-sm text-slate-400 font-body mt-1">Continuous operation with zero manual intervention.</p>
 </div>
-<div class="flex justify-between py-3 px-4 border-b border-surface-container-high">
-<span class="font-body text-sm text-on-surface-variant">Max Lift Height</span>
-<span class="font-body text-sm text-on-surface font-medium">10,000mm</span>
-</div>
-<div class="flex justify-between py-3 px-4 bg-surface-container-highest/30 border-b border-surface-container-high">
-<span class="font-body text-sm text-on-surface-variant">Navigation</span>
-<span class="font-body text-sm text-on-surface font-medium">QR + Laser Hybrid</span>
-</div>
-<div class="flex justify-between py-3 px-4 border-b border-surface-container-high">
-<span class="font-body text-sm text-on-surface-variant">Battery</span>
-<span class="font-body text-sm text-on-surface font-medium">24V 80Ah Li-ion</span>
-</div>
-<div class="flex justify-between py-3 px-4 bg-surface-container-highest/30 border-b border-surface-container-high">
-<span class="font-body text-sm text-on-surface-variant">IP Rating</span>
-<span class="font-body text-sm text-on-surface font-medium">IP54</span>
-</div>
-<div class="flex justify-between py-3 px-4">
-<span class="font-body text-sm text-on-surface-variant">Connectivity</span>
-<span class="font-body text-sm text-on-surface font-medium">WiFi 6</span>
+</li>
+</ul>
 </div>
 </div>
 </div>
-<!-- Right: Text & Image -->
-<div class="lg:col-span-7 flex flex-col gap-8">
-<div class="bg-surface-container-low p-8 md:p-12 h-full rounded-sm flex flex-col justify-center relative overflow-hidden">
+</section>
+<!-- Technical Specs -->
+<section class="py-24 px-8 bg-surface">
+<div class="max-w-screen-2xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12">
+<div>
+<h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-2">Technical Specifications</h2>
+<p class="text-slate-400 font-body">Core metrics and operational parameters.</p>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-surface-container-high">
+<!-- Column 1 -->
+<div class="p-8 space-y-8">
+<div>
+<p class="font-label text-xs text-slate-500 tracking-wider mb-2">CAPACITY</p>
+<p class="font-headline text-xl font-bold text-on-surface">500–1000 kg</p>
+</div>
+<div>
+<p class="font-label text-xs text-slate-500 tracking-wider mb-2">SPEED</p>
+<p class="font-headline text-xl font-bold text-on-surface">1.5 m/s</p>
+</div>
+<div>
+<p class="font-label text-xs text-slate-500 tracking-wider mb-2">NAVIGATION</p>
+<p class="font-headline text-xl font-bold text-on-surface">Laser + Vision</p>
+</div>
+</div>
+<!-- Column 2 -->
+<div class="p-8 space-y-8 bg-surface-container-low">
+<div>
+<p class="font-label text-xs text-slate-500 tracking-wider mb-2">POSITIONING</p>
+<p class="font-headline text-xl font-bold text-on-surface">±5 mm</p>
+</div>
+<div>
+<p class="font-label text-xs text-slate-500 tracking-wider mb-2">BATTERY</p>
+<p class="font-headline text-xl font-bold text-on-surface">48V 100Ah Li-ion</p>
+</div>
+<div>
+<p class="font-label text-xs text-slate-500 tracking-wider mb-2">CHARGING</p>
+<p class="font-headline text-xl font-bold text-on-surface">Auto-dock (2hrs)</p>
+</div>
+</div>
+<!-- Column 3 -->
+<div class="p-8 space-y-8">
+<div>
+<p class="font-label text-xs text-slate-500 tracking-wider mb-2">TEMPERATURE</p>
+<p class="font-headline text-xl font-bold text-on-surface">-10°C to 45°C</p>
+</div>
+<div>
+<p class="font-label text-xs text-slate-500 tracking-wider mb-2">COMMUNICATIONS</p>
+<p class="font-headline text-xl font-bold text-on-surface">5G / WiFi 6</p>
+</div>
+<div>
+<p class="font-label text-xs text-slate-500 tracking-wider mb-2">SAFETY &amp; DIMS</p>
+<p class="font-headline text-xl font-bold text-on-surface">LiDAR | 800×600×300 mm</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA & ROI -->
+<section class="py-24 px-8 bg-surface-container-lowest">
+<div class="max-w-4xl mx-auto text-center">
+<div class="bg-surface-container border border-primary/30 p-12 rounded-xl mb-16 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent"></div>
 <div class="relative z-10">
-<h2 class="font-headline text-3xl md:text-4xl font-bold tracking-tight text-on-surface mb-6">Optimized for High-Density Storage</h2>
-<p class="font-body text-lg text-on-surface-variant leading-relaxed">
-                                The RBL-ST500 is engineered specifically for automated storage and retrieval systems (ASRS). Its ultra-compact chassis and specialized lifting mast allow it to operate in aisles as narrow as 1.2 meters, maximizing warehouse cube utilization. Hybrid navigation ensures flawless operation between dense racking structures where laser lines-of-sight are frequently obstructed.
-                            </p>
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="calculate">calculate</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Calculate Your ROI</h3>
+<p class="text-slate-400 mb-8 max-w-lg mx-auto">See how the Storage AGV can streamline your operations. Typical deployments see an 18-month payback period.</p>
+<button class="bg-surface-container-highest text-on-surface font-headline font-bold px-8 py-3 rounded-xl hover:brightness-110 transition-all duration-200 border border-outline-variant/50" onclick="openQuoteModal(event)">
+                            Get a Free ROI Analysis
+                        </button>
 </div>
-<div class="absolute right-[-10%] bottom-[-10%] opacity-10 pointer-events-none">
-<span class="material-symbols-outlined text-[300px]">inventory_2</span>
 </div>
-</div>
+<h2 class="font-headline text-4xl font-bold mb-8">Ready to Transform Your Storage?</h2>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-headline font-bold text-lg px-8 py-4 rounded-xl hover:brightness-110 transition-all duration-200" onclick="openQuoteModal(event)">
+                        Request a Free Assessment
+                    </button>
+<button class="bg-transparent border-2 border-outline-variant text-on-surface font-headline font-bold text-lg px-8 py-4 rounded-xl hover:bg-surface-container transition-all duration-200">
+                        View Case Studies
+                    </button>
 </div>
 </div>
 </section>
 </main>
+<!-- Footer -->
+
+
+<!-- ── Quote / Contact Modal ────────────────────────────────── -->
+<div id="quote-modal" class="hidden fixed inset-0 z-[9998] flex items-center justify-center bg-black/70 backdrop-blur-sm px-4" onclick="if(event.target===this)closeQuoteModal()">
+  <div class="bg-[#1c2026] border border-[#574237]/30 rounded-2xl shadow-[0_32px_80px_rgba(0,0,0,0.7)] w-full max-w-lg overflow-hidden">
+    <!-- Header -->
+    <div class="flex items-center justify-between px-8 py-6 border-b border-[#574237]/20">
+      <div>
+        <h2 class="text-white font-bold text-xl">Get in Touch</h2>
+        <p class="text-slate-500 text-sm mt-1">Our team will respond within 24 hours</p>
+      </div>
+      <button onclick="closeQuoteModal()" class="text-slate-500 hover:text-white transition-colors">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+    </div>
+    <!-- Form -->
+    <form id="quote-form" onsubmit="submitQuoteForm(event)" class="px-8 py-6 space-y-4">
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-1">
+          <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Full Name <span class="text-[#f47b20]">*</span></label>
+          <input type="text" name="name" required placeholder="John Smith"
+            class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors"/>
+        </div>
+        <div class="space-y-1">
+          <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Company <span class="text-[#f47b20]">*</span></label>
+          <input type="text" name="company" required placeholder="Acme Logistics"
+            class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors"/>
+        </div>
+      </div>
+      <div class="space-y-1">
+        <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Email <span class="text-[#f47b20]">*</span></label>
+        <input type="email" name="email" required placeholder="john@company.com"
+          class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors"/>
+      </div>
+      <div class="space-y-1">
+        <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Phone / WhatsApp</label>
+        <input type="tel" name="phone" placeholder="+86 135 1081 6743"
+          class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors"/>
+      </div>
+      <div class="space-y-1">
+        <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Message</label>
+        <textarea name="message" rows="3" placeholder="Tell us about your warehouse automation needs..."
+          class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors resize-none"></textarea>
+      </div>
+      <!-- Submit -->
+      <button type="submit" id="quote-submit-btn"
+        style="background:linear-gradient(135deg,#ffb68b 0%,#f47b20 100%)"
+        class="w-full text-[#522300] font-bold py-4 rounded-xl hover:brightness-110 active:scale-95 transition-all text-sm tracking-wide">
+        Send Message
+      </button>
+    </form>
+    <!-- Success state (hidden by default) -->
+    <div id="quote-success" class="hidden px-8 py-12 flex flex-col items-center gap-4 text-center">
+      <span class="material-symbols-outlined text-[#f47b20] text-5xl">check_circle</span>
+      <h3 class="text-white font-bold text-xl">Message Sent!</h3>
+      <p class="text-slate-400 text-sm">Thank you for reaching out. We'll be in touch within 24 hours.</p>
+      <button onclick="closeQuoteModal()" style="background:linear-gradient(135deg,#ffb68b 0%,#f47b20 100%)"
+        class="mt-2 text-[#522300] font-bold px-8 py-3 rounded-xl hover:brightness-110 transition-all text-sm">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+function openQuoteModal(e) {
+  if (e) e.preventDefault();
+  // Reset form
+  var form = document.getElementById('quote-form');
+  var success = document.getElementById('quote-success');
+  var btn = document.getElementById('quote-submit-btn');
+  if (form) { form.reset(); form.classList.remove('hidden'); }
+  if (success) success.classList.add('hidden');
+  if (btn) { btn.textContent = 'Send Message'; btn.disabled = false; }
+  document.getElementById('quote-modal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+function closeQuoteModal() {
+  document.getElementById('quote-modal').classList.add('hidden');
+  document.body.style.overflow = '';
+}
+function submitQuoteForm(e) {
+  e.preventDefault();
+  var btn = document.getElementById('quote-submit-btn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  // Simulate send (replace with real API call if needed)
+  setTimeout(function() {
+    document.getElementById('quote-form').classList.add('hidden');
+    document.getElementById('quote-success').classList.remove('hidden');
+  }, 1000);
+}
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeQuoteModal();
+});
+</script>
+<!-- ── End Modal ─────────────────────────────────────────────── -->
+
 <footer class="bg-[#10141a]">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-screen-2xl mx-auto px-8 py-16">
 <div class="col-span-1 md:col-span-1 space-y-6">
@@ -265,34 +432,32 @@
 <div class="space-y-6">
 <h4 class="text-white font-bold text-sm uppercase tracking-widest">Products</h4>
 <ul class="space-y-3">
+<li><a class="text-slate-500 text-sm hover:text-[#f47b20] transition-colors" href="products-agv-forklift.html">AGV Forklift</a></li>
+<li><a class="text-slate-500 text-sm hover:text-[#f47b20] transition-colors" href="products-agv-roller.html">AGV Roller</a></li>
+<li><a class="text-slate-500 text-sm hover:text-[#f47b20] transition-colors" href="products-storage-agv.html">Storage AGV</a></li>
+<li><a class="text-slate-500 text-sm hover:text-[#f47b20] transition-colors" href="products-lifting-agv.html">Lifting AGV</a></li>
+<li><a class="text-slate-500 text-sm hover:text-[#f47b20] transition-colors" href="products-composite-robot.html">Composite Mobile Robot</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="text-white font-bold text-sm uppercase tracking-widest">Solutions</h4>
+<ul class="space-y-3">
 <li><a class="text-slate-500 text-sm hover:text-[#f47b20] transition-colors" href="solutions-asrs.html">ASRS Systems</a></li>
-<li><a class="text-slate-500 text-sm hover:text-[#f47b20] transition-colors" href="solutions-agv.html">AGV Forklifts</a></li>
-<li><a class="text-slate-500 text-sm hover:text-[#f47b20] transition-colors" href="solutions-picking.html">Robotic Picking</a></li>
+<li><a class="text-slate-500 text-sm hover:text-[#f47b20] transition-colors" href="solutions-picking.html">Picking Solutions</a></li>
+<li><a class="text-slate-500 text-sm hover:text-[#f47b20] transition-colors" href="solutions-material.html">Material Handling</a></li>
+<li><a class="text-slate-500 text-sm hover:text-[#f47b20] transition-colors" href="solutions-agv.html">Specialized AGV</a></li>
 <li><a class="text-slate-500 text-sm hover:text-[#f47b20] transition-colors" href="solutions-software.html">Control Software</a></li>
 </ul>
 </div>
-<div class="space-y-6">
-<h4 class="text-white font-bold text-sm uppercase tracking-widest">Company</h4>
-<ul class="space-y-3">
-<li><a class="text-slate-500 text-sm hover:text-[#f47b20] transition-colors" href="about.html">About Us</a></li>
-<li><a class="text-slate-500 text-sm hover:text-[#f47b20] transition-colors" href="case-studies.html">Case Studies</a></li>
-<li><a class="text-slate-500 text-sm hover:text-[#f47b20] transition-colors" href="#">Careers</a></li>
-<li><a class="text-slate-500 text-sm hover:text-[#f47b20] transition-colors" href="contact.html">Contact</a></li>
-</ul>
-</div>
-<div class="space-y-6">
-<h4 class="text-white font-bold text-sm uppercase tracking-widest">Global HQ</h4>
-<p class="text-slate-500 text-sm leading-relaxed">
-                    1200 Automation Way<br/>
-                    Suite 500, Industrial Park<br/>
-                    Stuttgart, Germany
-                </p>
-<div class="pt-4 border-t border-outline-variant/20">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary-container text-xl">verified</span>
-<span class="text-xs font-bold text-white uppercase tracking-tighter">ISO 9001 Certified</span>
-</div>
-</div>
+<div class="space-y-4">
+<h4 class="text-white font-bold text-sm uppercase tracking-widest">Get In Touch</h4>
+<p class="text-slate-500 text-xs leading-relaxed">Have a project in mind? Leave your details and we'll get back to you.</p>
+<form onsubmit="(function(e){e.preventDefault();var b=e.target.querySelector('button');b.textContent='Sent!';b.classList.add('opacity-60');b.disabled=true;})(event)" class="space-y-3">
+<input type="text" placeholder="Your Name" required class="w-full bg-[#1c2026] border border-[#574237]/30 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#f47b20] transition-colors"/>
+<input type="email" placeholder="Email Address" required class="w-full bg-[#1c2026] border border-[#574237]/30 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#f47b20] transition-colors"/>
+<textarea placeholder="Message" rows="2" class="w-full bg-[#1c2026] border border-[#574237]/30 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#f47b20] transition-colors resize-none"></textarea>
+<button type="submit" class="w-full bg-[#f47b20] hover:brightness-110 text-white font-bold text-sm py-2 rounded-lg transition-all active:scale-95">Send Message</button>
+</form>
 </div>
 </div>
 <div class="w-full border-t border-[#574237]/20">
@@ -307,200 +472,4 @@
 </div>
 </div>
 </footer>
-
-<!-- ── Quote / Contact Modal ────────────────────────────────── -->
-<div id="quote-modal" class="hidden fixed inset-0 z-[9998] flex items-center justify-center bg-black/70 backdrop-blur-sm px-4" onclick="if(event.target===this)closeQuoteModal()">
-  <div class="bg-[#1c2026] border border-[#574237]/30 rounded-2xl shadow-[0_32px_80px_rgba(0,0,0,0.7)] w-full max-w-lg overflow-hidden">
-    <!-- Header -->
-    <div class="flex items-center justify-between px-8 py-6 border-b border-[#574237]/20">
-      <div>
-        <h2 class="text-white font-bold text-xl">Get in Touch</h2>
-        <p class="text-slate-500 text-sm mt-1">Our team will respond within 24 hours</p>
-      </div>
-      <button onclick="closeQuoteModal()" class="text-slate-500 hover:text-white transition-colors">
-        <span class="material-symbols-outlined text-2xl">close</span>
-      </button>
-    </div>
-    <!-- Form -->
-    <form id="quote-form" onsubmit="submitQuoteForm(event)" class="px-8 py-6 space-y-4">
-      <div class="grid grid-cols-2 gap-4">
-        <div class="space-y-1">
-          <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Full Name <span class="text-[#f47b20]">*</span></label>
-          <input type="text" name="name" required placeholder="John Smith"
-            class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors"/>
-        </div>
-        <div class="space-y-1">
-          <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Company <span class="text-[#f47b20]">*</span></label>
-          <input type="text" name="company" required placeholder="Acme Logistics"
-            class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors"/>
-        </div>
-      </div>
-      <div class="space-y-1">
-        <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Email <span class="text-[#f47b20]">*</span></label>
-        <input type="email" name="email" required placeholder="john@company.com"
-          class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors"/>
-      </div>
-      <div class="space-y-1">
-        <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Phone / WhatsApp</label>
-        <input type="tel" name="phone" placeholder="+86 135 1081 6743"
-          class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors"/>
-      </div>
-      <div class="space-y-1">
-        <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Message</label>
-        <textarea name="message" rows="3" placeholder="Tell us about your warehouse automation needs..."
-          class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors resize-none"></textarea>
-      </div>
-      <!-- Submit -->
-      <button type="submit" id="quote-submit-btn"
-        style="background:linear-gradient(135deg,#ffb68b 0%,#f47b20 100%)"
-        class="w-full text-[#522300] font-bold py-4 rounded-xl hover:brightness-110 active:scale-95 transition-all text-sm tracking-wide">
-        Send Message
-      </button>
-    </form>
-    <!-- Success state (hidden by default) -->
-    <div id="quote-success" class="hidden px-8 py-12 flex flex-col items-center gap-4 text-center">
-      <span class="material-symbols-outlined text-[#f47b20] text-5xl">check_circle</span>
-      <h3 class="text-white font-bold text-xl">Message Sent!</h3>
-      <p class="text-slate-400 text-sm">Thank you for reaching out. We'll be in touch within 24 hours.</p>
-      <button onclick="closeQuoteModal()" style="background:linear-gradient(135deg,#ffb68b 0%,#f47b20 100%)"
-        class="mt-2 text-[#522300] font-bold px-8 py-3 rounded-xl hover:brightness-110 transition-all text-sm">
-        Close
-      </button>
-    </div>
-  </div>
-</div>
-
-<script>
-function openQuoteModal(e) {
-  if (e) e.preventDefault();
-  // Reset form
-  var form = document.getElementById('quote-form');
-  var success = document.getElementById('quote-success');
-  var btn = document.getElementById('quote-submit-btn');
-  if (form) { form.reset(); form.classList.remove('hidden'); }
-  if (success) success.classList.add('hidden');
-  if (btn) { btn.textContent = 'Send Message'; btn.disabled = false; }
-  document.getElementById('quote-modal').classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
-}
-function closeQuoteModal() {
-  document.getElementById('quote-modal').classList.add('hidden');
-  document.body.style.overflow = '';
-}
-function submitQuoteForm(e) {
-  e.preventDefault();
-  var btn = document.getElementById('quote-submit-btn');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  // Simulate send (replace with real API call if needed)
-  setTimeout(function() {
-    document.getElementById('quote-form').classList.add('hidden');
-    document.getElementById('quote-success').classList.remove('hidden');
-  }, 1000);
-}
-// Close on Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeQuoteModal();
-});
-</script>
-<!-- ── End Modal ─────────────────────────────────────────────── -->
-
-
-<!-- ── Quote / Contact Modal ────────────────────────────────── -->
-<div id="quote-modal" class="hidden fixed inset-0 z-[9998] flex items-center justify-center bg-black/70 backdrop-blur-sm px-4" onclick="if(event.target===this)closeQuoteModal()">
-  <div class="bg-[#1c2026] border border-[#574237]/30 rounded-2xl shadow-[0_32px_80px_rgba(0,0,0,0.7)] w-full max-w-lg overflow-hidden">
-    <!-- Header -->
-    <div class="flex items-center justify-between px-8 py-6 border-b border-[#574237]/20">
-      <div>
-        <h2 class="text-white font-bold text-xl">Get in Touch</h2>
-        <p class="text-slate-500 text-sm mt-1">Our team will respond within 24 hours</p>
-      </div>
-      <button onclick="closeQuoteModal()" class="text-slate-500 hover:text-white transition-colors">
-        <span class="material-symbols-outlined text-2xl">close</span>
-      </button>
-    </div>
-    <!-- Form -->
-    <form id="quote-form" onsubmit="submitQuoteForm(event)" class="px-8 py-6 space-y-4">
-      <div class="grid grid-cols-2 gap-4">
-        <div class="space-y-1">
-          <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Full Name <span class="text-[#f47b20]">*</span></label>
-          <input type="text" name="name" required placeholder="John Smith"
-            class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors"/>
-        </div>
-        <div class="space-y-1">
-          <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Company <span class="text-[#f47b20]">*</span></label>
-          <input type="text" name="company" required placeholder="Acme Logistics"
-            class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors"/>
-        </div>
-      </div>
-      <div class="space-y-1">
-        <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Email <span class="text-[#f47b20]">*</span></label>
-        <input type="email" name="email" required placeholder="john@company.com"
-          class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors"/>
-      </div>
-      <div class="space-y-1">
-        <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Phone / WhatsApp</label>
-        <input type="tel" name="phone" placeholder="+86 135 1081 6743"
-          class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors"/>
-      </div>
-      <div class="space-y-1">
-        <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Message</label>
-        <textarea name="message" rows="3" placeholder="Tell us about your warehouse automation needs..."
-          class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors resize-none"></textarea>
-      </div>
-      <!-- Submit -->
-      <button type="submit" id="quote-submit-btn"
-        style="background:linear-gradient(135deg,#ffb68b 0%,#f47b20 100%)"
-        class="w-full text-[#522300] font-bold py-4 rounded-xl hover:brightness-110 active:scale-95 transition-all text-sm tracking-wide">
-        Send Message
-      </button>
-    </form>
-    <!-- Success state (hidden by default) -->
-    <div id="quote-success" class="hidden px-8 py-12 flex flex-col items-center gap-4 text-center">
-      <span class="material-symbols-outlined text-[#f47b20] text-5xl">check_circle</span>
-      <h3 class="text-white font-bold text-xl">Message Sent!</h3>
-      <p class="text-slate-400 text-sm">Thank you for reaching out. We'll be in touch within 24 hours.</p>
-      <button onclick="closeQuoteModal()" style="background:linear-gradient(135deg,#ffb68b 0%,#f47b20 100%)"
-        class="mt-2 text-[#522300] font-bold px-8 py-3 rounded-xl hover:brightness-110 transition-all text-sm">
-        Close
-      </button>
-    </div>
-  </div>
-</div>
-
-<script>
-function openQuoteModal(e) {
-  if (e) e.preventDefault();
-  // Reset form
-  var form = document.getElementById('quote-form');
-  var success = document.getElementById('quote-success');
-  var btn = document.getElementById('quote-submit-btn');
-  if (form) { form.reset(); form.classList.remove('hidden'); }
-  if (success) success.classList.add('hidden');
-  if (btn) { btn.textContent = 'Send Message'; btn.disabled = false; }
-  document.getElementById('quote-modal').classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
-}
-function closeQuoteModal() {
-  document.getElementById('quote-modal').classList.add('hidden');
-  document.body.style.overflow = '';
-}
-function submitQuoteForm(e) {
-  e.preventDefault();
-  var btn = document.getElementById('quote-submit-btn');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  // Simulate send (replace with real API call if needed)
-  setTimeout(function() {
-    document.getElementById('quote-form').classList.add('hidden');
-    document.getElementById('quote-success').classList.remove('hidden');
-  }, 1000);
-}
-// Close on Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeQuoteModal();
-});
-</script>
-<!-- ── End Modal ─────────────────────────────────────────────── -->
-
 </body></html>
