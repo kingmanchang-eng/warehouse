@@ -122,7 +122,7 @@
 <a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="about.html">About</a>
 <a class="text-slate-400 font-medium hover:text-white transition-colors duration-200" href="contact.html">Contact</a>
 </div>
-<a href="contact.html" style="background:linear-gradient(135deg,#ffb68b 0%,#f47b20 100%)" class="text-[#522300] px-6 py-3 rounded-xl font-bold text-sm hover:brightness-110 active:scale-95 transition-all duration-200 shadow-lg"> Get a Quote </a>
+<a style="background:linear-gradient(135deg,#ffb68b 0%,#f47b20 100%)" class="text-[#522300] px-6 py-3 rounded-xl font-bold text-sm hover:brightness-110 active:scale-95 transition-all duration-200 shadow-lg" href="#" onclick="openQuoteModal(event)"> Get a Quote </a>
 </div>
 </nav>
 <!-- Main Content Layout -->
@@ -190,7 +190,7 @@
                             Autonomous lifting platform for mid-weight goods movement, conveyor integration and sortation. Engineered for continuous industrial cycles.
                         </p>
 <div class="pt-8 flex flex-wrap gap-4">
-<button class="px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-sm hover:opacity-90 transition-opacity border-t border-primary-fixed/20 shadow-[0_4px_14px_rgba(244,123,32,0.2)]">
+<button class="px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-sm hover:opacity-90 transition-opacity border-t border-primary-fixed/20 shadow-[0_4px_14px_rgba(244,123,32,0.2)]" onclick="openQuoteModal(event)">
                                 Request a Demo
                             </button>
 <button class="px-8 py-4 bg-transparent border border-outline-variant/30 text-primary font-bold rounded-sm hover:bg-surface-container transition-colors flex items-center gap-2">
@@ -431,4 +431,102 @@
 </div>
 </div>
 </footer>
+
+<!-- ── Quote / Contact Modal ────────────────────────────────── -->
+<div id="quote-modal" class="hidden fixed inset-0 z-[9998] flex items-center justify-center bg-black/70 backdrop-blur-sm px-4" onclick="if(event.target===this)closeQuoteModal()">
+  <div class="bg-[#1c2026] border border-[#574237]/30 rounded-2xl shadow-[0_32px_80px_rgba(0,0,0,0.7)] w-full max-w-lg overflow-hidden">
+    <!-- Header -->
+    <div class="flex items-center justify-between px-8 py-6 border-b border-[#574237]/20">
+      <div>
+        <h2 class="text-white font-bold text-xl">Get in Touch</h2>
+        <p class="text-slate-500 text-sm mt-1">Our team will respond within 24 hours</p>
+      </div>
+      <button onclick="closeQuoteModal()" class="text-slate-500 hover:text-white transition-colors">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+    </div>
+    <!-- Form -->
+    <form id="quote-form" onsubmit="submitQuoteForm(event)" class="px-8 py-6 space-y-4">
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-1">
+          <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Full Name <span class="text-[#f47b20]">*</span></label>
+          <input type="text" name="name" required placeholder="John Smith"
+            class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors"/>
+        </div>
+        <div class="space-y-1">
+          <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Company <span class="text-[#f47b20]">*</span></label>
+          <input type="text" name="company" required placeholder="Acme Logistics"
+            class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors"/>
+        </div>
+      </div>
+      <div class="space-y-1">
+        <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Email <span class="text-[#f47b20]">*</span></label>
+        <input type="email" name="email" required placeholder="john@company.com"
+          class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors"/>
+      </div>
+      <div class="space-y-1">
+        <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Phone / WhatsApp</label>
+        <input type="tel" name="phone" placeholder="+86 135 1081 6743"
+          class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors"/>
+      </div>
+      <div class="space-y-1">
+        <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Message</label>
+        <textarea name="message" rows="3" placeholder="Tell us about your warehouse automation needs..."
+          class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors resize-none"></textarea>
+      </div>
+      <!-- Submit -->
+      <button type="submit" id="quote-submit-btn"
+        style="background:linear-gradient(135deg,#ffb68b 0%,#f47b20 100%)"
+        class="w-full text-[#522300] font-bold py-4 rounded-xl hover:brightness-110 active:scale-95 transition-all text-sm tracking-wide">
+        Send Message
+      </button>
+    </form>
+    <!-- Success state (hidden by default) -->
+    <div id="quote-success" class="hidden px-8 py-12 flex flex-col items-center gap-4 text-center">
+      <span class="material-symbols-outlined text-[#f47b20] text-5xl">check_circle</span>
+      <h3 class="text-white font-bold text-xl">Message Sent!</h3>
+      <p class="text-slate-400 text-sm">Thank you for reaching out. We'll be in touch within 24 hours.</p>
+      <button onclick="closeQuoteModal()" style="background:linear-gradient(135deg,#ffb68b 0%,#f47b20 100%)"
+        class="mt-2 text-[#522300] font-bold px-8 py-3 rounded-xl hover:brightness-110 transition-all text-sm">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+function openQuoteModal(e) {
+  if (e) e.preventDefault();
+  // Reset form
+  var form = document.getElementById('quote-form');
+  var success = document.getElementById('quote-success');
+  var btn = document.getElementById('quote-submit-btn');
+  if (form) { form.reset(); form.classList.remove('hidden'); }
+  if (success) success.classList.add('hidden');
+  if (btn) { btn.textContent = 'Send Message'; btn.disabled = false; }
+  document.getElementById('quote-modal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+function closeQuoteModal() {
+  document.getElementById('quote-modal').classList.add('hidden');
+  document.body.style.overflow = '';
+}
+function submitQuoteForm(e) {
+  e.preventDefault();
+  var btn = document.getElementById('quote-submit-btn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  // Simulate send (replace with real API call if needed)
+  setTimeout(function() {
+    document.getElementById('quote-form').classList.add('hidden');
+    document.getElementById('quote-success').classList.remove('hidden');
+  }, 1000);
+}
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeQuoteModal();
+});
+</script>
+<!-- ── End Modal ─────────────────────────────────────────────── -->
+
 </body></html>
