@@ -511,6 +511,8 @@ function submitFooterForm(e) {
 
 
 
+
+
 <!-- rl-tracker -->
 <script>
 (function(){
@@ -525,9 +527,9 @@ function submitFooterForm(e) {
     else{fetch('https://robolyne-contact.kingman-chang.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},body:payload}).catch(function(){});}
   }
   function convert(type){
-    var payload=JSON.stringify({session_id:sid,type:type,page_url:location.href});
-    if(navigator.sendBeacon){navigator.sendBeacon('https://robolyne-contact.kingman-chang.workers.dev/convert',new Blob([payload],{type:'application/json'}));}
-    else{fetch('https://robolyne-contact.kingman-chang.workers.dev/convert',{method:'POST',headers:{'Content-Type':'application/json'},body:payload}).catch(function(){});}
+    // Use sendBeacon with text/plain — reliable on page navigation, no CORS preflight
+    var u='https://robolyne-contact.kingman-chang.workers.dev/convert?sid='+encodeURIComponent(sid)+'&type='+encodeURIComponent(type)+'&page='+encodeURIComponent(location.href);
+    navigator.sendBeacon(u,'.');
   }
   send(false);
   window.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')send(true);});
@@ -542,12 +544,10 @@ function submitFooterForm(e) {
     }
     var btn=e.target.closest('button');
     if(btn){
-      var id=(btn.id||'').toLowerCase();
-      var cls=(btn.className||'').toLowerCase();
-      var title=(btn.title||btn.getAttribute('aria-label')||'').toLowerCase();
-      if(/wechat|weixin/.test(id+cls+title)) convert('WeChat');
-      else if(/whatsapp|wa.me/.test(id+cls+title)) convert('WhatsApp');
-      else if(/tel|phone|call/.test(id+cls+title)) convert('电话');
+      var sig=(btn.id+' '+btn.className+' '+(btn.title||btn.getAttribute('aria-label')||'')).toLowerCase();
+      if(/wechat|weixin/.test(sig)) convert('WeChat');
+      else if(/whatsapp/.test(sig)) convert('WhatsApp');
+      else if(/tel|phone|call/.test(sig)) convert('电话');
     }
   });
 })();
