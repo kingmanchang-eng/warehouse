@@ -192,31 +192,31 @@
 <h2 class="text-3xl font-bold font-headline text-white mb-2">Send Us a Message</h2>
 <p class="text-slate-400 text-sm">Detailed enquiries allow our engineers to prepare a preliminary assessment before our first call.</p>
 </div>
-<form class="space-y-6">
+<form id="contact-page-form" onsubmit="submitContactForm(event)" class="space-y-6">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="flex flex-col gap-2">
 <label class="text-xs font-semibold text-slate-300 uppercase tracking-wider font-label">First Name</label>
-<input class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all" placeholder="e.g. James" type="text"/>
+<input name="first_name" class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all" placeholder="e.g. James" type="text"/>
 </div>
 <div class="flex flex-col gap-2">
 <label class="text-xs font-semibold text-slate-300 uppercase tracking-wider font-label">Last Name</label>
-<input class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all" placeholder="e.g. Miller" type="text"/>
+<input name="last_name" class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all" placeholder="e.g. Miller" type="text"/>
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="flex flex-col gap-2">
 <label class="text-xs font-semibold text-slate-300 uppercase tracking-wider font-label">Company</label>
-<input class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all" placeholder="Global Logistics Corp" type="text"/>
+<input name="company" class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all" placeholder="Global Logistics Corp" type="text"/>
 </div>
 <div class="flex flex-col gap-2">
 <label class="text-xs font-semibold text-slate-300 uppercase tracking-wider font-label">Email Address</label>
-<input class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all" placeholder="james@company.com" type="email"/>
+<input name="email" required class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all" placeholder="james@company.com" type="email"/>
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="flex flex-col gap-2">
 <label class="text-xs font-semibold text-slate-300 uppercase tracking-wider font-label">Phone Number</label>
-<input class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all" placeholder="+1 000 000 0000" type="tel"/>
+<input name="phone" class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all" placeholder="+1 000 000 0000" type="tel"/>
 </div>
 <div class="flex flex-col gap-2">
 <label class="text-xs font-semibold text-slate-300 uppercase tracking-wider font-label">Country</label>
@@ -252,7 +252,7 @@
 </div>
 <div class="flex flex-col gap-2">
 <label class="text-xs font-semibold text-slate-300 uppercase tracking-wider font-label">Message / Project Details</label>
-<textarea class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all" placeholder="Briefly describe your current pain points and operational goals..." rows="4"></textarea>
+<textarea name="message" class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all" placeholder="Briefly describe your current pain points and operational goals..." rows="4"></textarea>
 </div>
 <label class="flex items-center gap-3 cursor-pointer group py-2">
 <div class="relative w-5 h-5 flex items-center justify-center">
@@ -261,10 +261,54 @@
 </div>
 <span class="text-slate-400 text-sm group-hover:text-white transition-colors">I would like a complimentary ROI analysis for my facility.</span>
 </label>
-<button class="w-full bg-[#F47B20] text-on-primary py-4 rounded-lg font-extrabold font-headline uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-all mt-4" onclick="openQuoteModal(event)">
-                        Submit Enquiry
-                    </button>
+<button type="submit" id="contact-page-submit-btn" class="w-full bg-[#F47B20] text-on-primary py-4 rounded-lg font-extrabold font-headline uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-all mt-4">
+  Submit Enquiry
+</button>
 </form>
+<div id="contact-page-success" class="hidden text-center py-10">
+  <span class="material-symbols-outlined text-[#f47b20] text-5xl">check_circle</span>
+  <h3 class="text-white font-bold text-xl mt-3">Message Sent!</h3>
+  <p class="text-slate-400 text-sm mt-2">Thank you for reaching out. We'll be in touch within 24 hours.</p>
+</div>
+<script>
+function submitContactForm(e) {
+  e.preventDefault();
+  var form = document.getElementById('contact-page-form');
+  var btn = document.getElementById('contact-page-submit-btn');
+  var success = document.getElementById('contact-page-success');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  var data = Object.assign({
+    name: (form.first_name.value + ' ' + form.last_name.value).trim(),
+    company: form.company.value,
+    email: form.email.value,
+    phone: form.phone.value,
+    message: form.message.value,
+    source: 'Contact Page'
+  }, typeof getVisitMeta === 'function' ? getVisitMeta() : {});
+  fetch('https://robolyne-contact.kingman-chang.workers.dev', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(function(res) { return res.json(); })
+  .then(function(json) {
+    if (json.success) {
+      form.classList.add('hidden');
+      success.classList.remove('hidden');
+    } else {
+      btn.textContent = 'Submit Enquiry';
+      btn.disabled = false;
+      alert('Something went wrong, please try again.');
+    }
+  })
+  .catch(function() {
+    btn.textContent = 'Submit Enquiry';
+    btn.disabled = false;
+    alert('Network error, please try again.');
+  });
+}
+</script>
 </div>
 <!-- Right 40%: ROI & Specialist -->
 <div class="lg:col-span-4 space-y-8">
