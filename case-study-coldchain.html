@@ -377,6 +377,7 @@
 
 
 
+
 <!-- ── Quote / Contact Modal ────────────────────────────────── -->
 <div id="quote-modal" class="hidden fixed inset-0 z-[9998] flex items-center justify-center bg-black/70 backdrop-blur-sm px-4" onclick="if(event.target===this)closeQuoteModal()">
   <div class="bg-[#1c2026] border border-[#574237]/30 rounded-2xl shadow-[0_32px_80px_rgba(0,0,0,0.7)] w-full max-w-lg overflow-hidden">
@@ -394,13 +395,13 @@
     <form id="quote-form" onsubmit="submitQuoteForm(event)" class="px-8 py-6 space-y-4">
       <div class="grid grid-cols-2 gap-4">
         <div class="space-y-1">
-          <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Full Name <span class="text-[#f47b20]">*</span></label>
-          <input type="text" name="name" required placeholder="John Smith"
+          <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Full Name</label>
+          <input type="text" name="name" placeholder="John Smith"
             class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors"/>
         </div>
         <div class="space-y-1">
-          <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Company <span class="text-[#f47b20]">*</span></label>
-          <input type="text" name="company" required placeholder="Acme Logistics"
+          <label class="text-slate-400 text-xs font-bold uppercase tracking-wider">Company</label>
+          <input type="text" name="company" placeholder="Acme Logistics"
             class="w-full bg-[#10141a] border border-[#574237]/30 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#f47b20] transition-colors"/>
         </div>
       </div>
@@ -440,7 +441,7 @@
 </div>
 
 <script>
-var ROBOLYNE_WORKER_URL = 'https://robolyne-contact.kingman-chang.workers.dev';
+var ROBOLYNE_WORKER_URL = 'WORKER_URL_PLACEHOLDER';
 function openQuoteModal(e) {
   if (e) e.preventDefault();
   // Reset form
