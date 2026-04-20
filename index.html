@@ -531,12 +531,17 @@ h1, h2, h3, .headline {
 <div class="space-y-4">
 <h4 class="text-white font-bold text-sm uppercase tracking-widest">Get In Touch</h4>
 <p class="text-slate-500 text-xs leading-relaxed">Have a project in mind? Leave your details and we'll get back to you.</p>
-<form onsubmit="(function(e){e.preventDefault();var b=e.target.querySelector('button');b.textContent='Sent!';b.classList.add('opacity-60');b.disabled=true;})(event)" class="space-y-3">
-<input type="text" placeholder="Your Name" required class="w-full bg-[#1c2026] border border-[#574237]/30 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#f47b20] transition-colors"/>
-<input type="email" placeholder="Email Address" required class="w-full bg-[#1c2026] border border-[#574237]/30 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#f47b20] transition-colors"/>
-<textarea placeholder="Message" rows="2" class="w-full bg-[#1c2026] border border-[#574237]/30 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#f47b20] transition-colors resize-none"></textarea>
-<button type="submit" class="w-full bg-[#f47b20] hover:brightness-110 text-white font-bold text-sm py-2 rounded-lg transition-all active:scale-95">Send Message</button>
+<form id="footer-contact-form" onsubmit="submitFooterForm(event)" class="space-y-3">
+<input type="text" name="footer_name" placeholder="Your Name" required class="w-full bg-[#1c2026] border border-[#574237]/30 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#f47b20] transition-colors"/>
+<input type="email" name="footer_email" placeholder="Email Address" required class="w-full bg-[#1c2026] border border-[#574237]/30 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#f47b20] transition-colors"/>
+<textarea name="footer_message" placeholder="Message" rows="2" class="w-full bg-[#1c2026] border border-[#574237]/30 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#f47b20] transition-colors resize-none"></textarea>
+<button type="submit" id="footer-submit-btn" class="w-full bg-[#f47b20] hover:brightness-110 text-white font-bold text-sm py-2 rounded-lg transition-all active:scale-95">Send Message</button>
 </form>
+<div id="footer-success" class="hidden text-center py-4">
+  <span class="material-symbols-outlined text-[#f47b20] text-3xl">check_circle</span>
+  <p class="text-white font-bold text-sm mt-1">Message Sent!</p>
+  <p class="text-slate-500 text-xs">We'll get back to you within 24 hours.</p>
+</div>
 </div>
 </div>
 <div class="w-full border-t border-[#574237]/20">
@@ -551,6 +556,8 @@ h1, h2, h3, .headline {
 </div>
 </div>
 </footer>
+
+
 
 
 
@@ -619,6 +626,7 @@ h1, h2, h3, .headline {
 </div>
 
 <script>
+var ROBOLYNE_WORKER_URL = 'https://robolyne-contact.kingman-chang.workers.dev';
 function openQuoteModal(e) {
   if (e) e.preventDefault();
   // Reset form
@@ -638,18 +646,80 @@ function closeQuoteModal() {
 function submitQuoteForm(e) {
   e.preventDefault();
   var btn = document.getElementById('quote-submit-btn');
+  var form = document.getElementById('quote-form');
   btn.textContent = 'Sending...';
   btn.disabled = true;
-  // Simulate send (replace with real API call if needed)
-  setTimeout(function() {
-    document.getElementById('quote-form').classList.add('hidden');
-    document.getElementById('quote-success').classList.remove('hidden');
-  }, 1000);
+  var data = {
+    name: form.name.value,
+    company: form.company.value,
+    email: form.email.value,
+    phone: form.phone.value,
+    message: form.message.value,
+    source: 'Quote Modal'
+  };
+  fetch(ROBOLYNE_WORKER_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(function(res) { return res.json(); })
+  .then(function(json) {
+    if (json.success) {
+      form.classList.add('hidden');
+      document.getElementById('quote-success').classList.remove('hidden');
+    } else {
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+      alert('Something went wrong, please try again.');
+    }
+  })
+  .catch(function() {
+    btn.textContent = 'Send Message';
+    btn.disabled = false;
+    alert('Network error, please try again.');
+  });
 }
 // Close on Escape key
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeQuoteModal();
 });
+// Footer form submit
+function submitFooterForm(e) {
+  e.preventDefault();
+  var form = document.getElementById('footer-contact-form');
+  var btn = document.getElementById('footer-submit-btn');
+  var success = document.getElementById('footer-success');
+  if (!form) return;
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  var data = {
+    name: form.footer_name.value,
+    email: form.footer_email.value,
+    message: form.footer_message.value,
+    source: 'Footer Form'
+  };
+  fetch(ROBOLYNE_WORKER_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(function(res) { return res.json(); })
+  .then(function(json) {
+    if (json.success) {
+      form.classList.add('hidden');
+      if (success) success.classList.remove('hidden');
+    } else {
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+      alert('Something went wrong, please try again.');
+    }
+  })
+  .catch(function() {
+    btn.textContent = 'Send Message';
+    btn.disabled = false;
+    alert('Network error, please try again.');
+  });
+}
 </script>
 <!-- ── End Modal ─────────────────────────────────────────────── -->
 
