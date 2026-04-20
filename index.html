@@ -756,6 +756,7 @@ function submitFooterForm(e) {
 
 
 
+
 <!-- rl-tracker -->
 <script>
 (function(){
@@ -763,11 +764,19 @@ function submitFooterForm(e) {
   var sid=sessionStorage.getItem(key);
   if(!sid){sid=Math.random().toString(36).slice(2)+Date.now().toString(36);sessionStorage.setItem(key,sid);}
   var startTime=Date.now();
+  var pageViewId=null;
   function send(unload){
     var duration=Math.round((Date.now()-startTime)/1000);
-    var payload=JSON.stringify({session_id:sid,page_url:location.href,page_title:document.title,referrer:document.referrer,duration:unload?duration:0});
-    if(unload&&navigator.sendBeacon){navigator.sendBeacon('https://robolyne-contact.kingman-chang.workers.dev/track',new Blob([payload],{type:'application/json'}));}
-    else{fetch('https://robolyne-contact.kingman-chang.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},body:payload}).catch(function(){});}
+    if(unload&&pageViewId){
+      // Update duration of this page view on unload
+      var u='https://robolyne-contact.kingman-chang.workers.dev/track-duration?id='+pageViewId+'&dur='+duration;
+      navigator.sendBeacon(u,'.');
+    } else if(!unload){
+      // Initial page view — record it and get back the row ID
+      fetch('https://robolyne-contact.kingman-chang.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({session_id:sid,page_url:location.href,page_title:document.title,referrer:document.referrer})
+      }).then(function(r){return r.json();}).then(function(d){if(d.id)pageViewId=d.id;}).catch(function(){});
+    }
   }
   function convert(type){
     // Use sendBeacon with text/plain — reliable on page navigation, no CORS preflight
