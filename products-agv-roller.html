@@ -327,6 +327,7 @@
 
 
 
+
 <!-- ── Quote / Contact Modal ────────────────────────────────── -->
 <div id="quote-modal" class="hidden fixed inset-0 z-[9998] flex items-center justify-center bg-black/70 backdrop-blur-sm px-4" onclick="if(event.target===this)closeQuoteModal()">
   <div class="bg-[#1c2026] border border-[#574237]/30 rounded-2xl shadow-[0_32px_80px_rgba(0,0,0,0.7)] w-full max-w-lg overflow-hidden">
@@ -391,6 +392,32 @@
 
 <script>
 var ROBOLYNE_WORKER_URL = 'WORKER_URL_PLACEHOLDER';
+
+// ── Page visit tracking ──────────────────────────────────────────
+(function() {
+  try {
+    var key = 'rl_visit_history';
+    var history = JSON.parse(sessionStorage.getItem(key) || '[]');
+    var current = { url: location.href, title: document.title, time: new Date().toISOString() };
+    if (!history.length || history[history.length-1].url !== current.url) {
+      history.push(current);
+      if (history.length > 20) history = history.slice(-20);
+      sessionStorage.setItem(key, JSON.stringify(history));
+    }
+  } catch(e) {}
+})();
+
+function getVisitMeta() {
+  try {
+    return {
+      currentPage: location.href,
+      referrer: document.referrer || 'Direct',
+      visitHistory: JSON.parse(sessionStorage.getItem('rl_visit_history') || '[]'),
+      userAgent: navigator.userAgent
+    };
+  } catch(e) { return {}; }
+}
+
 function openQuoteModal(e) {
   if (e) e.preventDefault();
   // Reset form
@@ -413,14 +440,14 @@ function submitQuoteForm(e) {
   var form = document.getElementById('quote-form');
   btn.textContent = 'Sending...';
   btn.disabled = true;
-  var data = {
+  var data = Object.assign({
     name: form.name.value,
     company: form.company.value,
     email: form.email.value,
     phone: form.phone.value,
     message: form.message.value,
     source: 'Quote Modal'
-  };
+  }, getVisitMeta());
   fetch(ROBOLYNE_WORKER_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -456,12 +483,12 @@ function submitFooterForm(e) {
   if (!form) return;
   btn.textContent = 'Sending...';
   btn.disabled = true;
-  var data = {
+  var data = Object.assign({
     name: form.footer_name.value,
     email: form.footer_email.value,
     message: form.footer_message.value,
     source: 'Footer Form'
-  };
+  }, getVisitMeta());
   fetch(ROBOLYNE_WORKER_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
