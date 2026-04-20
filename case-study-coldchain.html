@@ -566,6 +566,7 @@ function submitFooterForm(e) {
 <!-- ── End Modal ─────────────────────────────────────────────── -->
 
 
+
 <!-- rl-tracker -->
 <script>
 (function(){
@@ -579,8 +580,22 @@ function submitFooterForm(e) {
     if(unload&&navigator.sendBeacon){navigator.sendBeacon('https://robolyne-contact.kingman-chang.workers.dev/track',new Blob([payload],{type:'application/json'}));}
     else{fetch('https://robolyne-contact.kingman-chang.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},body:payload}).catch(function(){});}
   }
+  function convert(type){
+    var payload=JSON.stringify({session_id:sid,type:type,page_url:location.href});
+    if(navigator.sendBeacon){navigator.sendBeacon('https://robolyne-contact.kingman-chang.workers.dev/convert',new Blob([payload],{type:'application/json'}));}
+    else{fetch('https://robolyne-contact.kingman-chang.workers.dev/convert',{method:'POST',headers:{'Content-Type':'application/json'},body:payload}).catch(function(){});}
+  }
   send(false);
   window.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')send(true);});
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a');
+    if(!a) return;
+    var href=a.href||'';
+    if(/^tel:/i.test(href)) convert('电话');
+    else if(/^mailto:/i.test(href)) convert('邮箱');
+    else if(/whatsapp|wa.me/i.test(href)) convert('WhatsApp');
+    else if(/weixin|wechat/i.test(href)||a.closest('[id*="wechat"],[class*="wechat"],[id*="weixin"],[class*="weixin"]')) convert('WeChat');
+  });
 })();
 </script>
 </body></html>
