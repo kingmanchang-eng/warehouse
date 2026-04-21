@@ -3,7 +3,7 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Contact | ROBOLYNE AUTOMATION</title>
+<title>aaa</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -91,6 +91,11 @@
                         radial-gradient(circle at bottom left, rgba(64, 71, 85, 0.1), transparent 40%);
         }
     </style>
+  <meta name="description" content="bbb">
+  <meta name="keywords" content="ccc">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="aaa">
+  <meta property="og:description" content="bbb">
 </head>
 <body class="bg-background selection:bg-[#F47B20]/30 overflow-x-hidden">
 <!-- TopNavBar Shell -->
@@ -241,7 +246,7 @@
 </select>
 </div>
 <div class="flex flex-col gap-2">
-<label class="text-xs font-semibold text-slate-300 uppercase tracking-wider font-label">Warehouse Size (m²)</label>
+<label class="text-xs font-semibold text-slate-300 uppercase tracking-wider font-label">Warehouse Size (mÂ²)</label>
 <select class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-[#F47B20] text-white rounded-lg py-3 px-4 outline-none transition-all">
 <option>&lt; 5,000</option>
 <option>5,000 - 20,000</option>
@@ -433,7 +438,7 @@ function submitContactForm(e) {
 </div>
 <div class="w-full border-t border-[#574237]/20">
 <div class="max-w-screen-2xl mx-auto px-8 py-8 flex flex-col md:row justify-between items-center gap-6">
-<p class="text-slate-500 text-sm">© 2024 RoboLyne Industrial Automation. All rights reserved.</p>
+<p class="text-slate-500 text-sm">Â© 2024 RoboLyne Industrial Automation. All rights reserved.</p>
 <div class="flex gap-8">
 <a class="text-slate-500 text-xs hover:text-[#f47b20] transition-colors" href="#">Privacy Policy</a>
 <a class="text-slate-500 text-xs hover:text-[#f47b20] transition-colors" href="#">Terms of Service</a>
@@ -452,7 +457,7 @@ function submitContactForm(e) {
 
 
 
-<!-- ── Quote / Contact Modal ────────────────────────────────── -->
+<!-- ââ Quote / Contact Modal ââââââââââââââââââââââââââââââââââ -->
 <div id="quote-modal" class="hidden fixed inset-0 z-[9998] flex items-center justify-center bg-black/70 backdrop-blur-sm px-4" onclick="if(event.target===this)closeQuoteModal()">
   <div class="bg-[#1c2026] border border-[#574237]/30 rounded-2xl shadow-[0_32px_80px_rgba(0,0,0,0.7)] w-full max-w-lg overflow-hidden">
     <!-- Header -->
@@ -517,7 +522,7 @@ function submitContactForm(e) {
 <script>
 var ROBOLYNE_WORKER_URL = 'https://robolyne-contact.kingman-chang.workers.dev';
 
-// ── Page visit tracking ──────────────────────────────────────────
+// ââ Page visit tracking ââââââââââââââââââââââââââââââââââââââââââ
 (function() {
   try {
     var key = 'rl_visit_history';
@@ -636,7 +641,7 @@ function submitFooterForm(e) {
   });
 }
 </script>
-<!-- ── End Modal ─────────────────────────────────────────────── -->
+<!-- ââ End Modal âââââââââââââââââââââââââââââââââââââââââââââââ -->
 
 
 
@@ -659,14 +664,14 @@ function submitFooterForm(e) {
       var u='https://robolyne-contact.kingman-chang.workers.dev/track-duration?id='+pageViewId+'&dur='+duration;
       navigator.sendBeacon(u,'.');
     } else if(!unload){
-      // Initial page view — record it and get back the row ID
+      // Initial page view â record it and get back the row ID
       fetch('https://robolyne-contact.kingman-chang.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},
         body:JSON.stringify({session_id:sid,page_url:location.href,page_title:document.title,referrer:document.referrer})
       }).then(function(r){return r.json();}).then(function(d){if(d.id)pageViewId=d.id;}).catch(function(){});
     }
   }
   function convert(type){
-    // Use sendBeacon with text/plain — reliable on page navigation, no CORS preflight
+    // Use sendBeacon with text/plain â reliable on page navigation, no CORS preflight
     var u='https://robolyne-contact.kingman-chang.workers.dev/convert?sid='+encodeURIComponent(sid)+'&type='+encodeURIComponent(type)+'&page='+encodeURIComponent(location.href);
     navigator.sendBeacon(u,'.');
   }
@@ -676,8 +681,8 @@ function submitFooterForm(e) {
     var a=e.target.closest('a');
     if(a){
       var href=a.href||'';
-      if(/^tel:/i.test(href)) convert('电话');
-      else if(/^mailto:/i.test(href)) convert('邮箱');
+      if(/^tel:/i.test(href)) convert('çµè¯');
+      else if(/^mailto:/i.test(href)) convert('é®ç®±');
       else if(/whatsapp|wa.me/i.test(href)) convert('WhatsApp');
       else if(/weixin|wechat/i.test(href)) convert('WeChat');
     }
@@ -686,7 +691,7 @@ function submitFooterForm(e) {
       var sig=(btn.id+' '+btn.className+' '+(btn.title||btn.getAttribute('aria-label')||'')).toLowerCase();
       if(/wechat|weixin/.test(sig)) convert('WeChat');
       else if(/whatsapp/.test(sig)) convert('WhatsApp');
-      else if(/tel|phone|call/.test(sig)) convert('电话');
+      else if(/tel|phone|call/.test(sig)) convert('çµè¯');
     }
   });
 })();
